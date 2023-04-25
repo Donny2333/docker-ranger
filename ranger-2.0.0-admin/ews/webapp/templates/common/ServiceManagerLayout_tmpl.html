@@ -21,16 +21,16 @@
     <div class="pull-right">
         {{#isZoneAdministration}}
             <div class="inline-block">
-                <b> Security Zone : </b>
+                <b> 安全区域 : </b>
                 <span title="Create zone first" class="zoneEmptyMsg"><input type="text" data-id="selectZoneName" disabled="disabled"></span>
             </div>
         {{/isZoneAdministration}}
         {{#if showImportExportBtn}}
-            <button type="button" title="Export" class=" btn btn-small btn-right btn-import-export" data-id="exportBtn"> <i class="icon-external-link-sign"></i>
-             Export
+            <button type="button" title="导出" class=" btn btn-small btn-right btn-import-export" data-id="exportBtn"> <i class="icon-external-link-sign"></i>
+             导出
             </button>
-            <button type="button" title="Import" class="btn btn-success btn btn-small btn-import-export" data-id="importBtn" > <i class="icon-rotate-180 icon-external-link-sign"></i>
-             Import
+            <button type="button" title="导入" class="btn btn-success btn btn-small btn-import-export" data-id="importBtn" > <i class="icon-rotate-180 icon-external-link-sign"></i>
+             导入
             </button>
         {{/if}}
     </div>

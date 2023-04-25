@@ -17,16 +17,16 @@
 <div class="nav-collapse collapse" >
 	<ul class="nav page-nav" >
 		<li class="active dropdown">
-			<a href="javascript:;" id="nav2"><i class="icon-shield"></i>Access Manager</a>
+			<a href="javascript:;" id="nav2"><i class="icon-shield"></i>访问管理</a>
 			<ul class="dropdown-menu">
 				{{#hasAccessToTab 'Resource Based Policies'}}
-					<li><a href="#!/policymanager/resource"><i class="icon-file"></i>Resource Based Policies</a></li>
+					<li><a href="#!/policymanager/resource"><i class="icon-file"></i>资源策略</a></li>
 				{{/hasAccessToTab}}
 				{{#hasAccessToTab 'Tag Based Policies'}}
-				<li><a href="#!/policymanager/tag"><i class="icon-tags"></i>Tag Based Policies</a></li>
+				<li><a href="#!/policymanager/tag"><i class="icon-tags"></i>标签策略</a></li>
 				{{/hasAccessToTab}}
 				{{#hasAccessToTab 'Reports'}}
-					<li><a href="#!/reports/userAccess"><i class="icon-beaker"></i>Reports</a></li>
+					<li><a href="#!/reports/userAccess"><i class="icon-beaker"></i>报表</a></li>
 				{{/hasAccessToTab}}
 			</ul>
 		</li>
@@ -40,7 +40,7 @@
 			<a href="javascript:;" id="nav4"><i class="icon-lock"></i> {{tt 'h.encryption'}} </a>
 			<ul class="dropdown-menu">
 				{{#hasAccessToTab  'Key Manager'}}
-					<li><a href="#!/kms/keys/new/manage/service"><i class="icon-key"></i>Key Manager </a></li>
+					<li><a href="#!/kms/keys/new/manage/service"><i class="icon-key"></i>密钥管理 </a></li>
 				{{/hasAccessToTab}}
 			</ul>
 		</li>
