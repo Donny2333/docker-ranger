@@ -1,0 +1,6 @@
+ranger-2.0.0-admin/
+conf/
+java/
+tmp/
+*.zip
+*.tar.gz
