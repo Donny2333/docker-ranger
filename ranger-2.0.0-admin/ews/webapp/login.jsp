@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=utf-8"%>
 <!--
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
@@ -24,9 +25,10 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title> Ranger - Sign In</title>
+		<title> Ranger - 登录</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
+		<meta http-equiv="Content-Type" content="text/html charset=utf-8">
 		
 		<link rel="shortcut icon" href="images/favicon.ico">
 		<link href="styles/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" id="bootstrap-css">
@@ -66,9 +68,9 @@
 			<form action="" method="post" accept-charset="utf-8">
 				<fieldset>
 					<div class="fields">
-						<label><i class="icon-user"></i> Username:</label>
+						<label><i class="icon-user"></i> 用户名:</label>
 						<input type="text" name="username" id="username" tabindex="1" autofocus>
-						<label><i class="icon-lock"></i> Password:</label>	
+						<label><i class="icon-lock"></i> 密码:</label>	
 						<input type="password" name="password" id="password" tabindex="2" autocomplete="off">
 					</div>
 					<span id="errorBox" class="help-inline" style="color:white;display:none;"><span class="errorMsg"></span>
@@ -78,7 +80,7 @@
 						<i class="icon-warning-sign" style="color:#ae2817;"></i>
 					</span>
 					<button type="submit" class="btn btn-primary btn-block" id="signIn" tabindex="4" >
-						Sign In
+						登录
 						<i id="signInLoading" class="icon-spinner icon-spin pull-right icon-sign-in"></i>
 					</button>
 				</fieldset>

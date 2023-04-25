@@ -16,13 +16,13 @@
 --}}
   <ul class="nav nav-tabs tabs clearfix">
     <li data="roles" data-js="roles">
-      <a data-toggle="tab" href="#roles">Roles</a>
+      <a data-toggle="tab" href="#roles">角色</a>
     </li>
     <li data="groups" data-js="groups"> 
-      <a data-toggle="tab" href="#groups">Groups</a> 
+      <a data-toggle="tab" href="#groups">组</a> 
     </li>
     <li class="active" data-js="users">
-      <a data-toggle="tab" href="#users">Users</a> 
+      <a data-toggle="tab" href="#users">用户</a> 
     </li>
   </ul>
 
@@ -34,7 +34,7 @@
 		</div>
 		<div class="clearfix" data-id="addNewBtnDiv">
 			{{#isSystemAdmin .}}
-                                <a href="javascript:void(0);" data-id="deleteUserGroup" title="Permanently delete selected users/groups/roles" class="btn btn-primary btn-right btn-danger"><i class="icon-trash icon-large" /></a>
+      <a href="javascript:void(0);" data-id="deleteUserGroup" title="永久删除所选用户/组/角色" class="btn btn-primary btn-right btn-danger"><i class="icon-trash icon-large" /></a>
 			{{/isSystemAdmin}}
       {{#isSystemAdmin .}}
       <div class="btn-group btn-right" data-id="hideShowVisibility">
@@ -52,8 +52,8 @@
       <a href="#!/roles/create" class="btn btn-primary btn-right" type="button" data-id="addNewRoles" style="display:none;"> {{tt 'lbl.addNewRole'}} </a>
       {{/isSystemAdmin}}
 		</div>
-                <div data-id="r_tableList">
-          <b class="_prevNav"></b>
+    <div data-id="r_tableList">
+      <b class="_prevNav"></b>
 		</div>
 	</div>
 </div>

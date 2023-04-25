@@ -587,9 +587,9 @@ var bootbox = window.bootbox || (function(document, $) {
             CONFIRM : 'Akzeptieren'
         },
         'en' : {
-            OK      : 'OK',
-            CANCEL  : 'Cancel',
-            CONFIRM : 'OK'
+            OK      : '确定',
+            CANCEL  : '取消',
+            CONFIRM : '确认'
         },
         'es' : {
             OK      : 'OK',

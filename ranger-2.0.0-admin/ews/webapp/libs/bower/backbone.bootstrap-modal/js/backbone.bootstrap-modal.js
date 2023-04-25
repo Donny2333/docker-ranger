@@ -101,10 +101,10 @@
     initialize: function(options) {
       this.options = _.extend({
         title: null,
-        okText: 'OK',
+        okText: '确定',
         focusOk: true,
         okCloses: true,
-        cancelText: 'Cancel',
+        cancelText: '取消',
         allowCancel: true,
         escape: true,
         animate: false,
