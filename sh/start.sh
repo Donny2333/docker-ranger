@@ -27,6 +27,8 @@ sed -i 's|security.debian.org/debian-security|mirrors.ustc.edu.cn/debian-securit
 apt update && apt install -y python
 fi
 
+rm -rf /opt/ranger-2.0.0-admin/set_globals.log.*
+
 RANGER_ADMIN_CONF=/opt/ranger-2.0.0-admin
 /opt/ranger-2.0.0-admin/setup.sh
 /opt/ranger-2.0.0-admin/set_globals.sh
