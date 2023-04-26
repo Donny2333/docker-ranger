@@ -114,7 +114,7 @@ define(function(require) {
 				dataNode					:'dataNode',
 				nameNode					:'nameNode',
 				secNamenode					:'secNamenode',
-				userAccessReport				: 'User Access Report',
+				userAccessReport				: '用户访问报表',
 				auditReport					: 'Audit Report',
 				createAsset					: 'Create Repository',
 				editAsset					: 'Edit Repository',
