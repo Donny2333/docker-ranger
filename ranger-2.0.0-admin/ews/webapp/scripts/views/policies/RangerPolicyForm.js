@@ -124,23 +124,23 @@ define(function(require){
 		},
 		getSchema : function(){
 			var attrs = {},that = this;
-                        var basicSchema = ['name','isEnabled','policyPriority','policyLabels'];
+			var basicSchema = ['name','isEnabled','policyPriority','policyLabels'];
 			var schemaNames = this.getPolicyBaseFieldNames();
 
 			var formDataType = new BackboneFormDataType();
 			attrs = formDataType.getFormElements(this.rangerServiceDefModel.get('resources'),this.rangerServiceDefModel.get('enums'), attrs, this, true);
-                        if(this.model.schemaBase){
-                                var attr1 = _.pick(_.result(this.model,'schemaBase'),basicSchema);
-                                var attr2 = _.pick(_.result(this.model,'schemaBase'),schemaNames);
-                                return _.extend(attr1,_.extend(attrs,attr2));
-                        }
+			if(this.model.schemaBase){
+				var attr1 = _.pick(_.result(this.model,'schemaBase'),basicSchema);
+				var attr2 = _.pick(_.result(this.model,'schemaBase'),schemaNames);
+				return _.extend(attr1,_.extend(attrs,attr2));
+			}
 		},
 		/** on render callback */
 		render: function(options) {
             var that = this;
 			Backbone.Form.prototype.render.call(this, options);
 			//initialize path plugin for hdfs component : resourcePath
-                        if(!_.isUndefined(this.initilializePathPlugin) && this.initilializePathPlugin){
+			if(!_.isUndefined(this.initilializePathPlugin) && this.initilializePathPlugin){
 				this.initializePathPlugins(this.pathPluginOpts);
 			}
 			if(XAUtil.isAccessPolicy(this.model.get('policyType'))){
@@ -177,7 +177,7 @@ define(function(require){
                 });
                 var modal = new Backbone.BootstrapModal({
                   content	: view,
-                  title	: 'Policy Validity Period',
+                  title	: '策略有效期',
                   okText  :"保存",
                   animate : true,focusOk:false,
                   escape:false,
@@ -216,7 +216,7 @@ define(function(require){
                 });
                 var modal = new Backbone.BootstrapModal({
                   content   : view,
-                    title : 'Policy Conditions',
+                    title : '策略条件',
                     okText  :"保存",
                     animate : true,
                     focusOk:false,
@@ -258,7 +258,7 @@ define(function(require){
                     if($data.length > 0){
                         that.$el.find(that.ui.conditionData).html($data);
                     }else{
-                        that.$el.find(that.ui.conditionData).html('<tr><td> No Conditions </td></tr>');
+                        that.$el.find(that.ui.conditionData).html('<tr><td> 无条件 </td></tr>');
                     }
                 });
                 modal.on('shown', function(a){

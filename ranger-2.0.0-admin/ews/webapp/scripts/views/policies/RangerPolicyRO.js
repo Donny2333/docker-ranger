@@ -190,18 +190,18 @@ define(function(require) {
 			var headers = this.getPermHeaders(), items = [];
 			this.policyDetails['policyCondition'] = headers.policyCondition;
             if(XAUtils.isAccessPolicy(this.policy.get('policyType'))){
-                items = [{'itemName': 'policyItems',title : 'Allow Condition'}];
+                items = [{'itemName': 'policyItems',title : 'Allow 规则'}];
             }
             if(XAUtils.isRowFilterPolicy(this.policy.get('policyType'))){
-                items.push({'itemName': 'rowFilterPolicyItems',title : 'Row Level Conditions'});
+                items.push({'itemName': 'rowFilterPolicyItems',title : '行级别规则'});
             }
             if(XAUtils.isMaskingPolicy(this.policy.get('policyType'))){
-                items.push({'itemName': 'dataMaskPolicyItems',title : 'Masking Conditions'});
+                items.push({'itemName': 'dataMaskPolicyItems',title : '掩蔽规则'});
             }
             if(JSON.parse(this.serviceDef.get('options').enableDenyAndExceptionsInPolicies) && XAUtils.isAccessPolicy(this.policy.get('policyType'))){
-                items.push({'itemName': 'allowExceptions',title : 'Exclude from Allow Conditions'},
-                          {'itemName': 'denyPolicyItems',title : 'Deny Condition'},
-                          {'itemName': 'denyExceptions',title : 'Exclude from Deny Conditions'});
+                items.push({'itemName': 'allowExceptions',title : '从Allow规则中排除'},
+                          {'itemName': 'denyPolicyItems',title : 'Deny 规则'},
+                          {'itemName': 'denyExceptions',title : '从Deny规则中排除'});
                 if(this.policy.has('isDenyAllElse') && this.policy.get('isDenyAllElse')){
                 	items = _.reject(items, function(m){
                 		return m.itemName == 'denyPolicyItems' || m.itemName == 'denyExceptions'

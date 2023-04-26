@@ -1765,19 +1765,35 @@ td.html-cell.renderable:last-child {
 	margin-bottom: 0 !important;
 }
 .policy-form .field-isEnabled{
-margin-left: 413px;
-margin-bottom: 0px !important;
+  display: inline-block;
+  margin-bottom: 0px !important;
+  line-height: 0;
+  font-size: 0;
+}
+.policy-form .field-isEnabled label{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
 }
 .policy-form .field-isEnabled .controls{
 	margin-left:30px;
 }
 .policy-form .field-policyPriority{
-  margin-left: 413px;
-  margin-bottom: 0px !important;
+  display: inline-block;
+	margin-bottom: 20px !important;
+  line-height: 0;
+  font-size: 0;
+}
+.policy-form .field-policyPriority label{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  font-size: 0;
 }
 .policy-form .field-policyPriority .controls{
-  margin-top: -45px;
-  margin-left: 127px;
+	margin-left:30px;
 }
 .margin-bottom-5{
 margin-bottom: 5px;

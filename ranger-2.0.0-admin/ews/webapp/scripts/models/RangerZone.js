@@ -48,7 +48,7 @@ define(function(require) {
                 return _.extend(attrs, {
                     name: {
                         type: 'Text',
-                        title: 'Zone Name *',
+                        title: '区域名称 *',
                         validators: ['required',{type:'regexp',regexp:/^[a-zA-Z0-9_-][a-zA-Z0-9\s_-]{0,254}$/, message : localization.tt("validationMessages.nameValidationMsg")}],
                         editorAttrs: {
                             maxlength: 255
@@ -56,12 +56,12 @@ define(function(require) {
                     },
                     description: {
                         type: 'TextArea',
-                        title: 'Description',
+                        title: '描述',
                         validators: []
                     },
                     tagServices : {
                         type : 'Select2Remote',
-                        title : 'Select Tag Services',
+                        title : '选择标签服务',
                         pluginAttr : XAUtil.getTagBaseServices(),
                         options    : function(callback, editor){
                             callback();

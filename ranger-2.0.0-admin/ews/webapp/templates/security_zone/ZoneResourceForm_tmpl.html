@@ -13,11 +13,11 @@ language governing permissions and limitations under the License. --}}
 <form class="form-horizontal">
         <fieldset>
                 <p class="formHeader">
-                        Policy Details :
+                        策略信息 :
                 </p>
                 {{#if policyType}}
                         <div class="control-group field-id">
-                                <label class="control-label" for="c1836_id">Policy Type</label>
+                                <label class="control-label" for="c1836_id">策略类型</label>
                                 <div class="controls">
                                         <label class="label label-ranger" style="margin-top: 5px; margin-left: 9px;">{{policyType}}</label>
                                         <a href="javascript:void(0);" data-js="policyTimeBtn" data-id="1" class="btn btn-primary pull-right" title="set time for policy"><i class="icon-time icon-large"></i> {{policyTimeBtnLabel}} </a>
@@ -27,7 +27,7 @@ language governing permissions and limitations under the License. --}}
                 {{/if}}
                 {{#if id}}
                 <div class="control-group field-id">
-                        <label class="control-label" for="c1836_id">Policy ID</label>
+                        <label class="control-label" for="c1836_id">策略ID</label>
                         <div class="controls">
                                 <label class="label label-ranger"
                                         style="margin-top: 5px; margin-left: 9px;">{{id}}</label>
@@ -37,7 +37,7 @@ language governing permissions and limitations under the License. --}}
         </fieldset>
         <fieldset>
                         <p class="wrap-header bold formHeader">
-                                {{conditionType}} Conditions : <span class="label label-yellow pull-right"></span>
+                                {{conditionType}} 规则 : <span class="label label-yellow pull-right"></span>
                         </p>
                         &nbsp;
                         <div class="wrap position-relative">
@@ -54,13 +54,13 @@ language governing permissions and limitations under the License. --}}
                                 {{#compare "Allow" "eq" conditionType}}
                                         <div class="form-indent-right" data-js="allowExcludePerm">
                                                 <p class="wrap-header reportSearchHeader "><i class="icon-warning-sign icon-1 text-color-red"></i>
-                                                Exclude from Allow Conditions :</p>
+                                                从Allow规则中排除 :</p>
                                                 &nbsp;
                                                 <div class="wrap position-relative borderNone">
 
                                                         <div class="" data-customfields="groupPermsAllowExclude">
                                                                 <div class="control-group" style="margin-left: -100px;">
-                                                                        <label class="control-label">Exclude :</label>
+                                                                        <label class="control-label">排除 :</label>
                                                                         <div class="controls">
                                                                                 <img src="images/loading.gif"
                                                                                         style="margin-left: 4%; margin-top: 1%;" />
@@ -73,7 +73,7 @@ language governing permissions and limitations under the License. --}}
                         </div>
                         {{#compare "Allow" "eq" conditionType}}
                                 <div data-js="denyConditionItems">
-                                        <p class="wrap-header bold formHeader">Deny Conditions :</p>
+                                        <p class="wrap-header bold formHeader">Deny 规则 :</p>
                                         &nbsp;
                                         <div class="wrap position-relative">
                                                 <div class="" data-customfields="groupPermsDeny">
@@ -87,12 +87,12 @@ language governing permissions and limitations under the License. --}}
                                                 </div>
                                                 <div class="form-indent-right">
                                                         <p class="wrap-header reportSearchHeader"><i class="icon-warning-sign icon-1 text-color-red"></i>
-                                                        Exclude from Deny Conditions :</p>
+                                                        从Deny规则中排除 :</p>
                                                         &nbsp;
                                                         <div class="wrap position-relative borderNone">
                                                                 <div class="" data-customfields="groupPermsDenyExclude">
                                                                         <div class="control-group">
-                                                                                <label class="control-label">Exclude :</label>
+                                                                                <label class="control-label">排除 :</label>
                                                                                 <div class="controls">
                                                                                         <img src="images/loading.gif"
                                                                                                 style="margin-left: 4%; margin-top: 1%;" />

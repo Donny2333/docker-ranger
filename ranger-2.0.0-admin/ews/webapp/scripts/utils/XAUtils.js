@@ -460,7 +460,7 @@ define(function(require) {
 			autoUnblock : false,
 			clickUnblock : false,
 			bgPath : 'images/',
-			content : '<img src="images/blockLoading.gif" > Please wait..',
+			content : '<img src="images/blockLoading.gif" > 请稍后..',
 			css : {}
 		};
 		options = _.isUndefined(options) ? Opt : options;

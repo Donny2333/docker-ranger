@@ -15,10 +15,10 @@
   limitations under the License.
 --}}
 <div class="diff-content">
-	<b>Policy ID :&nbsp;&nbsp;</b><label class="label label-ranger"> {{objectId}}</label>
-	<label class="no-margin label-size13-weightbold">Policy Name : {{policyName}}</label>
+	<b>策略ID :&nbsp;&nbsp;</b><label class="label label-ranger"> {{objectId}}</label>
+	<label class="no-margin label-size13-weightbold">策略名称 : {{policyName}}</label>
     {{#if zoneName}}
-        <label class="no-margin label-size13-weightbold" > Zone Name  &nbsp;&nbsp;:  {{zoneName}}</label>
+        <label class="no-margin label-size13-weightbold" > 区域名称  &nbsp;&nbsp;:  {{zoneName}}</label>
     {{/if}}
 	{{#if repositoryType}}
 	<label class="no-margin label-size13-weightbold">Repository Type : {{repositoryType}}</label>
@@ -26,7 +26,7 @@
 	<label class="no-margin label-size13-weightbold"> Created Date  &nbsp;&nbsp;:  {{objectCreatedDate}}</label>
 	<label class="no-margin label-size13-weightbold" > Created By  &nbsp;&nbsp;:  {{userName}}</label>
 {{#if collection.length}}
-	<h5>Policy Details :</h5>
+	<h5>策略信息 :</h5>
 	<div class="diff">
 		<div class="diff-left">
 			<h3>Fields</h3>
@@ -137,7 +137,7 @@
 							{{/each}}
 					</li>
 					{{/if}}
-					<li class="change-row">Delegate Admin:{{this.delegateAdmin}}</li>
+					<li class="change-row">代理管理员:{{this.delegateAdmin}}</li>
 				</ol><br/>
 			{{/each}}
 		</div>
@@ -187,7 +187,7 @@
 							{{/each}}
 					</li>
 					{{/if}}
-					<li class="change-row">Delegate Admin:{{this.delegateAdmin}}</li>
+					<li class="change-row">代理管理员:{{this.delegateAdmin}}</li>
 				</ol><br/>
 			{{/each}}
 		</div>
@@ -237,7 +237,7 @@
 							{{/each}}
 					</li>
 					{{/if}}
-					<li class="change-row">Delegate Admin:{{this.delegateAdmin}}</li>
+					<li class="change-row">代理管理员:{{this.delegateAdmin}}</li>
 				</ol><br/>
 			{{/each}}
 		</div>
@@ -285,7 +285,7 @@
 							{{/each}}
 					</li>
 					{{/if}}
-					<li class="change-row">Delegate Admin:{{this.delegateAdmin}}</li>
+					<li class="change-row">代理管理员:{{this.delegateAdmin}}</li>
 				</ol><br/>
 			{{/each}}
 		</div>

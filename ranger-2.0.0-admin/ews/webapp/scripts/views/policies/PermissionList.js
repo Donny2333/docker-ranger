@@ -207,7 +207,7 @@ define(function(require) {
 		},
                 createDropDown :function($select, type){
 			var that = this, tags = [],
-                        placeholder = (type == 'users') ? 'Select Users' : ((type == 'groups') ? 'Select Groups' : 'Select Roles'),
+                        placeholder = (type == 'users') ? '选择用户' : ((type == 'groups') ? '选择组' : '选择角色'),
                         searchUrl   = (type == 'users') ? "service/xusers/lookup/users" : ((type == 'groups') ? "service/xusers/lookup/groups" : "service/roles/roles");
 			if(this.model.has('editMode') && !_.isEmpty($select.val())){
                                 var temp = this.model.attributes[ (type == 'users') ? 'userName' : ((type == 'groups') ? 'groupName' : 'roleName')];
@@ -290,7 +290,7 @@ define(function(require) {
                                 }
 				//create x-editable for permissions
 				this.ui.addPerms.editable({
-					emptytext : 'Add Permissions',
+					emptytext : '新增权限',
 					source: this.perms,
 					value : this.permsIds,
 					display: function(values,srcData) {
@@ -445,7 +445,7 @@ define(function(require) {
 			}
 			//create x-editable for permissions
 			this.ui.addPerms.editable({
-			    emptytext : 'Add Permissions',
+			    emptytext : '新增权限',
 				source: this.perms,
 				value : this.permsIds,
 				select2option : select2optn,

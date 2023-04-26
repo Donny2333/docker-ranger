@@ -56,19 +56,19 @@ define(function(require){
 			return _.extend(attrs,{
 				name : {
                                         type		: 'TextFieldWithIcon',
-					title		: 'Policy Name *',
+					title		: '策略名称 *',
 					validators	: ['required'],
 					editorAttrs 	:{ maxlength: 255},
                                         errorMsg    : localization.tt("validationMessages.policyNameValidationMsg")
 				},
 				description : {
 					type		: 'TextArea',
-					title		: 'Description',
+					title		: '描述',
 					validators	: []
 				},
                 policyLabels : {
                     type	   : 'Select2Remote',
-                    title	   : 'Policy Label',
+                    title	   : '策略标签',
                     pluginAttr : this.getPluginAttr(),
                     options    : function(callback, editor){
                         callback();
@@ -76,33 +76,33 @@ define(function(require){
                 },
 				isEnabled : {
 					type		: 'Switch',
-					title		: '',//localization.tt("lbl.policyStatus"),
-					onText		: 'enabled',
-					offText		: 'disabled',
+					title		: ' ',//localization.tt("lbl.policyStatus"),
+					onText		: '启用',
+					offText		: '禁用',
 					width		: '80',
 					switchOn	: true
 				},
                 policyPriority : {
                     type            : 'Switch',
-                    title           : '',//localization.tt("lbl.policyStatus"),
-                    onText          : 'override',
-                    offText         : 'normal',
+                    title           : ' ',//localization.tt("lbl.policyStatus"),
+                    onText          : '覆盖',
+                    offText         : '常态',
                     width           : '80',
                     switchOn        : false
                 },
 				isAuditEnabled : {
 					type		: 'Switch',
 					title		: localization.tt("lbl.auditLogging"),
-					onText 		: 'YES',
-					offText		: 'NO',
+					onText 		: '是',
+					offText		: '否',
 					switchOn	: true
 				},
 				//recursive(ON/OFF) toggle
 				recursive : {
 					type : 'Switch',
 					title : 'Recursive',
-					onText : 'ON',
-					offText : 'OFF',
+					onText : '是',
+					offText : '否',
 					switchOn : true
 				}
 			});
@@ -156,7 +156,7 @@ define(function(require){
             return{
                 multiple: true,
                 closeOnSelect : true,
-                placeholder : 'Policy Label',
+                placeholder : '策略标签',
                 width :'220px',
                 allowClear: true,
                 tokenSeparators: ["," , " "],

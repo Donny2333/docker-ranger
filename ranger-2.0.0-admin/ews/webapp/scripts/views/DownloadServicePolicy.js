@@ -124,7 +124,7 @@ define(function(require){
 			this.ui.componentTypeSelected.select2({
 				multiple: true,
 				closeOnSelect: true,
-				placeholder: 'Select Component',
+				placeholder: '选择组件',
 			    //maximumSelectionSize : 1,
 			    width: '530px',
 			    allowClear: true,

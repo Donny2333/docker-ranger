@@ -375,7 +375,7 @@ define(function(require){
 			model.collection = this.collection;
 			XAUtil.confirmPopup({
 				//msg :localize.tt('msg.confirmDelete'),
-				msg :'Are you sure want to delete ?',
+				msg :'是否确实要删除?',
 				callback : function(){
 					XAUtil.blockUI();
 					model.destroy({
@@ -444,13 +444,13 @@ define(function(require){
                         });
 			var PolicyStatusValue = _.map(XAEnums.ActiveStatus, function(status) { return { 'label': status.label, 'value': Boolean(status.value)}; });
 	
-                        var searchOpt = ['Policy Name','组名','用户名','Status', 'Policy Label'];//,'Start Date','End Date','Today'];
+                        var searchOpt = ['策略名称','组名','用户名','状态', '策略标签'];//,'Start Date','End Date','Today'];
                         searchOpt = _.union(searchOpt, _.map(resourceSearchOpt, function(opt){ return opt.label }))
                         var serverAttrName  = [{text : "组名",  label :"group",   info:localization.tt('h.groupNameMsg')},
-                                               {text : "Policy Name", label :"policyNamePartial",  info :localization.tt('msg.policyNameMsg')},
-                                               {text : "Status",      info : localization.tt('msg.statusMsg') ,  label :"isEnabled",'multiple' : true, 'optionsArr' : PolicyStatusValue},
+                                               {text : "策略名称", label :"policyNamePartial",  info :localization.tt('msg.policyNameMsg')},
+                                               {text : "状态",      info : localization.tt('msg.statusMsg') ,  label :"isEnabled",'multiple' : true, 'optionsArr' : PolicyStatusValue},
                                                {text : "用户名",   label :"user" ,  info :localization.tt('h.userMsg')},
-                                               {text : "Policy Label",   label :"policyLabelsPartial" ,  info :localization.tt('h.policyLabelsinfo')},
+                                               {text : "策略标签",   label :"policyLabelsPartial" ,  info :localization.tt('h.policyLabelsinfo')},
                                                ];
 			                     // {text : 'Start Date',label :'startDate'},{text : 'End Date',label :'endDate'},
 				                 //  {text : 'Today',label :'today'}];
@@ -482,10 +482,10 @@ define(function(require){
 				      callbacks :  { 
 				    	  valueMatches :function(facet, searchTerm, callback) {
 								switch (facet) {
-									case 'Status':
+									case '状态':
 										callback(that.getActiveStatusNVList());
 										break;
-									case 'Policy Type':
+									case '策略类型':
 										callback(that.getNameOfPolicyTypeNVList());
 //										callback(XAUtil.enumToSelectLabelValuePairs(XAEnums.PolicyType));
 										break;		

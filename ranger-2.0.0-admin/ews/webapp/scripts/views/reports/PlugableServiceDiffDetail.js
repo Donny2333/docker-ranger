@@ -103,8 +103,8 @@ define(function(require){
 			
 		},
 		initializeServiceDef : function(){
-                        var url, policyName = this.collection.findWhere({'attributeName':'Policy Name'}),
-                        zoneName = this.collection.findWhere({'attributeName':'Zone Name'});
+                        var url, policyName = this.collection.findWhere({'attributeName':'策略名称'}),
+                        zoneName = this.collection.findWhere({'attributeName':'区域名称'});
                         if((this.action == 'create' || this.action == 'Import Create') && zoneName && !_.isEmpty(zoneName)){
                                 this.zoneName = zoneName.get('newValue');
                                 this.collection.remove(zoneName);
@@ -215,7 +215,7 @@ define(function(require){
 					tmp.set("newValue", policyStatus.get('newValue') ==  "true" ? 'enabled' : 'disabled')
 				}
 			}
-                        var policyLabels = this.collection.findWhere({'attributeName':'Policy Labels'});
+                        var policyLabels = this.collection.findWhere({'attributeName':'策略标签'});
                         if(!_.isUndefined(policyLabels)){
                             if(!_.isEmpty(policyLabels.get('previousValue'))){
                                 var resourcepreviousValue = JSON.parse(policyLabels.get('previousValue'));

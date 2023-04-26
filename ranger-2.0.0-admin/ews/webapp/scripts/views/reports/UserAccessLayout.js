@@ -170,13 +170,13 @@ define(function(require) {'use strict';
 			XAUtil.searchInfoPopover(this.getSearchInfoArray() , this.ui.iconSearchInfo , 'left');
 		},
 		getSearchInfoArray: function(){
-			return [{text :'Policy Name' , info :localization.tt('msg.policyNameMsg')},
-					{text :'Policy Type' , info :localization.tt('msg.policyTypeMsg')},
-					{text :'Component'   , info :localization.tt('msg.componentMsg')},
-					{text :'Search By'   , info :localization.tt('msg.searchBy')},
-					{text :'Resource'    , info :localization.tt('msg.resourceMsg')},
-					{text :'Policy Label', info :localization.tt('msg.policyLabelsinfo')},
-					{text :'Zone Name', info :localization.tt('lbl.zoneName')}]
+			return [{text :'策略名称' , info :localization.tt('msg.policyNameMsg')},
+					{text :'策略类型' , info :localization.tt('msg.policyTypeMsg')},
+					{text :'组件'   , info :localization.tt('msg.componentMsg')},
+					{text :'条件搜索'   , info :localization.tt('msg.searchBy')},
+					{text :'资源'    , info :localization.tt('msg.resourceMsg')},
+					{text :'策略标签', info :localization.tt('msg.policyLabelsinfo')},
+					{text :'区域名称', info :localization.tt('lbl.zoneName')}]
 		},
 		getResourceLists: function(collName, serviceDefName , policyType){
 			var that = this, coll = this[collName];
@@ -403,7 +403,7 @@ define(function(require) {'use strict';
 					editable : false,
 				},
 				resources: {
-					label: 'Resources',
+					label: '资源',
 					cell: 'Html',
 					formatter: _.extend({}, Backgrid.CellFormatter.prototype, {
 						fromRaw: function (rawValue,model) {
@@ -428,7 +428,7 @@ define(function(require) {'use strict';
 					click: false
 					},
 				policyType: {
-					label: 'Policy Type',
+					label: '策略类型',
 					cell: Backgrid.HtmlCell.extend({className: 'html-cell, cellWidth-1'}),
 					formatter: _.extend({}, Backgrid.CellFormatter.prototype,{
 						fromRaw: function(rawValue,model){
@@ -501,7 +501,7 @@ define(function(require) {'use strict';
             if(XAUtil.isAccessPolicy(this.ui.policyType.val())){
                 permissions = {
                         allow:{
-                                label: 'Allow Conditions',
+                                label: '准许规则',
                                 cell: "subgrid-custom",
                                 optionValues : subcolumns,
                                 editable: false,
@@ -512,7 +512,7 @@ define(function(require) {'use strict';
             }else if(XAUtil.isMaskingPolicy(this.ui.policyType.val())){
                                 permissions = {
                                         mask:{
-                                                        label: 'Masking Conditions',
+                                                        label: '掩蔽规则',
                                                         cell: "subgrid-custom",
                                                         optionValues : subcolumns,
                                                         editable: false,
@@ -523,7 +523,7 @@ define(function(require) {'use strict';
                    }else if(XAUtil.isRowFilterPolicy(this.ui.policyType.val())){
                                 permissions = {
                                                 rowlvl:{
-                                                                label: 'Row Level Conditions',
+                                                                label: '行级别规则',
                                                                 cell: "subgrid-custom",
                                                                 optionValues : subcolumns,
                                                                 editable: false,
@@ -537,7 +537,7 @@ define(function(require) {'use strict';
             if(enableDenyAndExceptionsInPolicies && that.ui.policyType.val() == 0) {
             	cols = {
             			allowExclude:{
-            				label: 'Allow Exclude',
+            				label: '从Allow规则中排除',
             				cell: "subgrid-custom",
             				optionValues : subcolumns,
             				editable: false,
@@ -545,7 +545,7 @@ define(function(require) {'use strict';
             				click : false
             			},	
             			deny:{
-            				label: 'Deny Conditions',
+            				label: 'Deny规则',
             				cell: "subgrid-custom",
             				optionValues : subcolumns,
             				editable: false,
@@ -553,7 +553,7 @@ define(function(require) {'use strict';
             				click : false
             			},
             			denyExclude:{
-            				label: 'Deny Exclude',
+            				label: '从Deny规则中排除',
             				cell: "subgrid-custom",
             				optionValues : subcolumns,
             				editable: false,	
@@ -578,7 +578,7 @@ define(function(require) {'use strict';
 			this.ui.componentType.select2({
 				multiple: true,
 				closeOnSelect: true,
-				placeholder: 'Select Component',
+				placeholder: '选择组件',
 				//maximumSelectionSize : 1,
 				width: '220px',
 				allowClear: true,
@@ -595,7 +595,7 @@ define(function(require) {'use strict';
 			this.ui.policyLabels.select2({
 				multiple: false,
 				closeOnSelect: true,
-				placeholder: 'Select Policy Label',
+				placeholder: '请选择策略标签',
 				allowClear: true,
 				width: '220px',
 				ajax :{

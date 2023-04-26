@@ -321,7 +321,7 @@ define(function(require) {
             ZoneName: function(options) {
                 return {
                     href: 'javascript:void(0)',
-                    text: 'Zone Name : ' + options
+                    text: '区域名称 : ' + options
                 }
             },
             Roles : {

@@ -132,7 +132,7 @@ define(function(require) {
 			this.timezone = date.replace(/^.*GMT.*\(/, "").replace(/\)$/, "");
 			this.initializeServiceDefColl();
             if(_.isUndefined(App.vsHistory)){
-	            var startDateModel = new Backbone.Model({'category':'Start Date', value:Globalize.format(new Date(),"MM/dd/yyyy")});
+	            var startDateModel = new Backbone.Model({'category':'开始日期', value:Globalize.format(new Date(),"MM/dd/yyyy")});
                     App.vsHistory = {'bigData':[startDateModel], 'admin':[], 'loginSession':[], 'plugin':[],'pluginStatus':[], 'userSync': []};
             }
 		},
@@ -337,43 +337,43 @@ define(function(require) {
             var that = this , query = '';
 			var serverListForRepoType =  this.serviceDefList.map(function(serviceDef){ return {'label' : serviceDef.get('name').toUpperCase(), 'value' : serviceDef.get('id')}; })
             var serviceUser = [{'label' : 'True' , 'value' : true},{'label' : 'False' , 'value' : false}]
-			var serverAttrName = [{text : 'Start Date',label :'startDate'},{text : 'End Date',label :'endDate'},
-				                  {text : 'Application',label : 'agentId'},
-				                  {text : 'User',label :'requestUser', 'addMultiple': true},
-				                  {text : 'Exclude User',label :'excludeUser', 'addMultiple': true},
-				                  {text : 'Resource Name',label :'resourcePath'},
-			                      {text : 'Service Name',label :'repoName'},{text : 'Policy ID',label :'policyId'},
-			                      {text : 'Service Type',label :'repoType','multiple' : true, 'optionsArr' : serverListForRepoType},
-			                      {text : 'Result',label :'accessResult', 'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AccessResult)},
-			                      {text : 'Access Type',label :'accessType'},{text : 'Access Enforcer',label :'aclEnforcer'},
-			                      {text : 'Client IP',label :'clientIP'},{text : 'Tags',label :'tags'},
-			                      {text : 'Resource Type',label : 'resourceType'},{text : 'Cluster Name',label : 'cluster'},
-                                  {text : 'Zone Name',label : 'zoneName'},{text : localization.tt("lbl.agentHost"), label :"agentHost"}];
-            var searchOpt = ['Resource Type','Start Date','End Date','Application','User','Service Name','Service Type','Resource Name','Access Type','Result','Access Enforcer',
-            'Client IP','Tags','Cluster Name', 'Zone Name', 'Exclude User', localization.tt("lbl.agentHost")];//,'Policy ID'
+			var serverAttrName = [{text : '开始日期',label :'startDate'},{text : '结束日期',label :'endDate'},
+				                  {text : '应用',label : 'agentId'},
+				                  {text : '用户',label :'requestUser', 'addMultiple': true},
+				                  {text : '排除用户',label :'excludeUser', 'addMultiple': true},
+				                  {text : '资源名称',label :'resourcePath'},
+			                      {text : '服务名称',label :'repoName'},{text : '策略ID',label :'policyId'},
+			                      {text : '服务类型',label :'repoType','multiple' : true, 'optionsArr' : serverListForRepoType},
+			                      {text : '报表',label :'accessResult', 'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AccessResult)},
+			                      {text : '访问类型',label :'accessType'},{text : 'Access Enforcer',label :'aclEnforcer'},
+			                      {text : '客户端IP',label :'clientIP'},{text : '标签',label :'tags'},
+			                      {text : '资源类型',label : 'resourceType'},{text : '集群名',label : 'cluster'},
+                                  {text : '区域名称',label : 'zoneName'},{text : localization.tt("lbl.agentHost"), label :"agentHost"}];
+            var searchOpt = ['资源类型','开始日期','结束日期','应用','用户','服务名称','服务类型','资源名称','访问类型','报表','Access Enforcer',
+            '客户端IP','标签','集群名', '区域名称', '排除用户', localization.tt("lbl.agentHost")];//,'策略ID'
                         this.clearVisualSearch(this.accessAuditList, serverAttrName);
                         this.searchInfoArr =[{text :'Access Enforcer', info :localization.tt('msg.accessEnforcer')},
-                                            {text :'Access Type' 	, info :localization.tt('msg.accessTypeMsg')},
-                                            {text :'Client IP' 		, info :localization.tt('msg.clientIP')},
-                                            {text :'Cluster Name'	, info :localization.tt('h.clusterName')},
-                                            {text :'Zone Name'      , info :localization.tt('h.zoneName')},
-                                            {text :'End Date'       , info :localization.tt('h.endDate')},
-                                            {text :'Resource Name' 	, info :localization.tt('msg.resourceName')},
-                                            {text :'Resource Type'  , info :localization.tt('msg.resourceTypeMsg')},
-                                            {text :'Result'			, info :localization.tt('msg.resultMsg')},
-                                            {text :'Service Name' 	, info :localization.tt('h.serviceNameMsg')},
-                                            {text :'Service Type' 	, info :localization.tt('h.serviceTypeMsg')},
-                                            {text :'Start Date'     , info :localization.tt('h.startDate')},
-                                            {text :'User' 			, info :localization.tt('h.userMsg')},
-                                            {text :'Exclude User' 	, info :localization.tt('h.userMsg')},
-                                            {text :'Application' 	, info :localization.tt('h.application')},
-                                            {text :'Tags' 			, info :localization.tt('h.tagsMsg')} ];
+                                            {text :'访问类型' 	, info :localization.tt('msg.accessTypeMsg')},
+                                            {text :'客户端IP' 		, info :localization.tt('msg.clientIP')},
+                                            {text :'集群名'	, info :localization.tt('h.clusterName')},
+                                            {text :'区域名称'      , info :localization.tt('h.zoneName')},
+                                            {text :'结束日期'       , info :localization.tt('h.endDate')},
+                                            {text :'资源名称' 	, info :localization.tt('msg.resourceName')},
+                                            {text :'资源类型'  , info :localization.tt('msg.resourceTypeMsg')},
+                                            {text :'报表'			, info :localization.tt('msg.resultMsg')},
+                                            {text :'服务名称' 	, info :localization.tt('h.serviceNameMsg')},
+                                            {text :'服务类型' 	, info :localization.tt('h.serviceTypeMsg')},
+                                            {text :'开始日期'     , info :localization.tt('h.startDate')},
+                                            {text :'用户' 			, info :localization.tt('h.userMsg')},
+                                            {text :'排除用户' 	, info :localization.tt('h.userMsg')},
+                                            {text :'应用' 	, info :localization.tt('h.application')},
+                                            {text :'标签' 			, info :localization.tt('h.tagsMsg')} ];
                         //initilize info popover
                         XAUtils.searchInfoPopover(this.searchInfoArr , this.ui.iconSearchInfo , 'bottom');
                         //Set query(search filter values in query)
                         if(_.isEmpty(App.vsHistory.bigData)){
                                 query = '"Start Date": "'+Globalize.format(new Date(),"MM/dd/yyyy")+'"';
-                                App.vsHistory.bigData.push(new Backbone.Model({'category':'Start Date', value:Globalize.format(new Date(),"MM/dd/yyyy")}));
+                                App.vsHistory.bigData.push(new Backbone.Model({'category':'开始日期', value:Globalize.format(new Date(),"MM/dd/yyyy")}));
                         }else{
                                 _.map(App.vsHistory.bigData, function(a){ query += '"'+a.get('category')+'":"'+a.get('value')+'"'; });
                         }
@@ -397,7 +397,7 @@ define(function(require) {
 						});
 						
 						switch (facet) {
-							case 'Service Name':
+							case '服务名称':
 								var serviceList 	= new RangerServiceList() , serviceNameVal = [];
 								serviceList.setPageSize(100);
 								serviceList.fetch().done(function(){
@@ -415,7 +415,7 @@ define(function(require) {
 								callback(serviceNameVal);
 								});
 								break;
-							case 'Service Type':
+							case '服务类型':
 								var serviveDefs = [];
 								that.serviceDefList.each(function(m){
                                                                         if(SessionMgr.isKeyAdmin() || SessionMgr.isKMSAuditor()){
@@ -430,10 +430,10 @@ define(function(require) {
 								});
 								callback(serviveDefs);
 								break;
-							case 'Result':
+							case '报表':
 				                callback(XAUtils.hackForVSLabelValuePairs(XAEnums.AccessResult));
 				                break;  
-							case 'Start Date' :
+							case '开始日期' :
 								var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
 								if(models.length > 0){
 									var tmpmodel = models[0];
@@ -441,7 +441,7 @@ define(function(require) {
 								} 
 								XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
 								break;
-							case 'End Date' :
+							case '结束日期' :
 								var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
 								if(models.length > 0){
 									var tmpmodel = models[0];
@@ -449,7 +449,7 @@ define(function(require) {
 								} 
 								XAUtils.displayDatepicker(that.ui.visualSearch, facet, startDate, callback);
 								break;
-							case 'Zone Name' :
+							case '区域名称' :
 								var rangerZoneList = new RangerZoneList(), zoneList = [];
 								rangerZoneList.fetch({
 									cache : false,
@@ -476,7 +476,7 @@ define(function(require) {
 			var searchOpt = ["Audit Type", "User", "Actions", "Session ID", "Start Date", "End Date"];
 			var serverAttrName  = [{text : "Audit Type", label :"objectClassType",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.ClassTypes)},
                                                {text : "User", label :"owner"}, {text :  "Session ID", label :"sessionId"},
-                                               {text : 'Start Date',label :'startDate'},{text : 'End Date',label :'endDate'},
+                                               {text : '开始日期',label :'startDate'},{text : '结束日期',label :'endDate'},
                                                {text : "Actions", label :"action",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAGlobals.ActionType)},];
 			
                         var auditList = [],query = '', actionTypeList = [];
@@ -516,7 +516,7 @@ define(function(require) {
 									case 'Actions':
 										callback(actionTypeList);
 										break;
-									case 'Start Date' :
+									case '开始日期' :
 											var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
 											if(models.length > 0){
 												var tmpmodel = models[0];
@@ -524,7 +524,7 @@ define(function(require) {
 											} 
 											XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
 											break;
-									case 'End Date' :
+									case '结束日期' :
 										var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
 										if(models.length > 0){
 											var tmpmodel = models[0];
@@ -543,12 +543,12 @@ define(function(require) {
 		},
 		addSearchForLoginSessionTab : function(){
                         var that = this , query = '' ;
-			var searchOpt = ["Session ID", "Login ID", "Result", "Login Type", "IP", "User Agent", "Start Date","End Date"];
+			var searchOpt = ["Session ID", "Login ID", "报表", "Login Type", "IP", "User Agent", "Start Date","End Date"];
 			var serverAttrName  = [{text : "Session ID", label :"id"}, {text : "Login ID", label :"loginId"},
-			                       {text : "Result", label :"authStatus",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AuthStatus)},
+			                       {text : "报表", label :"authStatus",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AuthStatus)},
 			                       {text : "Login Type", label :"authType",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AuthType)},
 			                       {text : "IP", label :"requestIP"},{text :"User Agent", label :"requestUserAgent"},
-			                       {text : 'Start Date',label :'startDate'},{text : 'End Date',label :'endDate'} ];
+			                       {text : '开始日期',label :'startDate'},{text : '结束日期',label :'endDate'} ];
 									
                         _.map(App.vsHistory.loginSession, function(m){ query += '"'+m.get('category')+'":"'+m.get('value')+'"'; });
 			var pluginAttr = {
@@ -559,7 +559,7 @@ define(function(require) {
 				      callbacks :  { 
 				    	  valueMatches :function(facet, searchTerm, callback) {
 								switch (facet) {
-									case 'Result':
+									case '报表':
 										var authStatusList = _.filter(XAEnums.AuthStatus, function(obj){
 											if(obj.label != XAEnums.AuthStatus.AUTH_STATUS_UNKNOWN.label)
 												return obj;
@@ -573,7 +573,7 @@ define(function(require) {
 										});
 										callback(XAUtils.hackForVSLabelValuePairs(authTypeList));
 										break;	
-									case 'Start Date' :
+									case '开始日期' :
 											var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
 											if(models.length > 0){
 												var tmpmodel = models[0];
@@ -581,7 +581,7 @@ define(function(require) {
 											} 
 											XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
 											break;
-									case 'End Date' :
+									case '结束日期' :
 										var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
 										if(models.length > 0){
 											var tmpmodel = models[0];
@@ -599,12 +599,12 @@ define(function(require) {
 		},
 		addSearchForAgentTab : function(){
                         var that = this , query = '';
-                        var searchOpt = ["Service Name", "Plugin ID", "Plugin IP", "Http Response Code", "Start Date","End Date", "Cluster Name"];
+                        var searchOpt = ["服务名称", "Plugin ID", "Plugin IP", "Http Response Code", "Start Date","End Date", "Cluster Name"];
                         var serverAttrName  = [{text : "Plugin ID", label :"agentId"}, {text : "Plugin IP", label :"clientIP"},
-			                       {text : "Service Name", label :"repositoryName"},{text : "Http Response Code", label :"httpRetCode"},
+			                       {text : "服务名称", label :"repositoryName"},{text : "Http Response Code", label :"httpRetCode"},
 			                       {text : "Export Date", label :"createDate"},
-			                       {text : 'Start Date',label :'startDate'},{text : 'End Date',label :'endDate'},
-				                   {text : 'Cluster Name',label :'cluster'}];
+			                       {text : '开始日期',label :'startDate'},{text : '结束日期',label :'endDate'},
+				                   {text : '集群名',label :'cluster'}];
                         _.map(App.vsHistory.plugin, function(m){ query += '"'+m.get('category')+'":"'+m.get('value')+'"'; });
 			var pluginAttr = {
 				      placeholder :localization.tt('h.searchForYourAgent'),
@@ -614,7 +614,7 @@ define(function(require) {
 				      callbacks :  { 
 				    	  valueMatches :function(facet, searchTerm, callback) {
 								switch (facet) {
-								    case 'Service Name':
+								    case '服务名称':
 										var serviceList 	= new RangerServiceList();
 										serviceList.setPageSize(100);
 										serviceList.fetch().done(function(){
@@ -624,7 +624,7 @@ define(function(require) {
 								    case 'Audit Type':
 										callback([]);
 										break;
-									case 'Start Date' :
+									case '开始日期' :
 											var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
 											if(models.length > 0){
 												var tmpmodel = models[0];
@@ -632,7 +632,7 @@ define(function(require) {
 											} 
 											XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
 											break;
-									case 'End Date' :
+									case '结束日期' :
 										var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
 										if(models.length > 0){
 											var tmpmodel = models[0];
@@ -664,7 +664,7 @@ define(function(require) {
 					callbacks :  { 
 				    	  valueMatches :function(facet, searchTerm, callback) {
 								switch (facet) {
-								    case 'Service Name':
+								    case '服务名称':
 										var serviceList 	= new RangerServiceList();
 										serviceList.setPageSize(100);
 										serviceList.fetch().done(function(){
@@ -672,7 +672,7 @@ define(function(require) {
 										});
 										break;
 
-                                                                        case 'Service Type':
+                                                                        case '服务类型':
                                                                                 var serviveType = [];
                                                                                 that.serviceDefList.each(function(m){
                                                                                         serviveType.push({ 'label' : m.get('name') , 'value' : m.get('name') });
@@ -713,10 +713,10 @@ define(function(require) {
             var that = this , query = '';
             var searchOpt = [localization.tt("lbl.userName"), localization.tt("lbl.syncSource"), localization.tt("lbl.startDate"), localization.tt("lbl.endDate")];
             var serverAttrName  = [{text : localization.tt("lbl.userName"), label :"userName"},{text : localization.tt("lbl.syncSource"), label :"syncSource"},
-                                   {text : 'Start Date',label :'startDate'},{text : 'End Date',label :'endDate'}];
+                                   {text : '开始日期',label :'startDate'},{text : '结束日期',label :'endDate'}];
             if(_.isEmpty(App.vsHistory.userSync)){
                 query = '"Start Date": "'+Globalize.format(new Date(),"MM/dd/yyyy")+'"';
-                App.vsHistory.userSync.push(new Backbone.Model({'category':'Start Date', value:Globalize.format(new Date(),"MM/dd/yyyy")}));
+                App.vsHistory.userSync.push(new Backbone.Model({'category':'开始日期', value:Globalize.format(new Date(),"MM/dd/yyyy")}));
             }else{
                 _.map(App.vsHistory.userSync, function(a){ query += '"'+a.get('category')+'":"'+a.get('value')+'"'; });
             }
@@ -731,7 +731,7 @@ define(function(require) {
                             case 'Sync Source':
                                     callback( _.map(XAEnums.UserSyncSource, function(obj){ return obj.label; }) );
                                     break;
-                            case 'Start Date' :
+                            case '开始日期' :
                                     var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
                                     if(models.length > 0){
                                         var tmpmodel = models[0];
@@ -739,7 +739,7 @@ define(function(require) {
                                     }
                                     XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
                                     break;
-                            case 'End Date' :
+                            case '结束日期' :
                                     var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
                                     if(models.length > 0){
                                         var tmpmodel = models[0];
@@ -1160,14 +1160,14 @@ define(function(require) {
 						})
 					},
 				    agentId : {
-					label : 'Application',
+					label : '应用',
 					cell: "String",
 					click : false,
 					drag : false,
 					editable:false
 				},
 					requestUser : {
-						label : 'User',
+						label : '用户',
 						cell: "String",
 						click : false,
 						drag : false,
@@ -1256,7 +1256,7 @@ define(function(require) {
 						}),
 					},
 					clientIP : {
-						label : 'Client IP',
+						label : '客户端IP',
 						cell: "string",
 						click : false,
 						drag : false,
@@ -1301,7 +1301,7 @@ define(function(require) {
 						editable:false
 					},
                                         tags : {
-                                                label : 'Tags',
+                                                label : '标签',
                                                 cell: Backgrid.HtmlCell.extend({
                                                         className : 'tagsColumn'
                                                 }),

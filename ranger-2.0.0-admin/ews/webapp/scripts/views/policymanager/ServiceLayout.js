@@ -251,7 +251,7 @@ define(function(require){
 			if(model){
 				model = new RangerService(model.attributes);
 				XAUtil.confirmPopup({
-					msg :'Are you sure want to delete ?',
+					msg :'是否确实要删除?',
 					callback : function(){
 						XAUtil.blockUI();
 						model.destroy({

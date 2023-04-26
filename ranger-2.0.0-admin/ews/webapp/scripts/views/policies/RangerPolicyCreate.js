@@ -294,7 +294,7 @@ define(function(require){
 		onDelete :function(){
 			var that = this;
 			XAUtil.confirmPopup({
-				msg :'Are you sure want to delete ?',
+				msg :'是否确实要删除?',
 				callback : function(){
 					XAUtil.blockUI();
 					that.model.destroy({

@@ -330,7 +330,7 @@ define(function(require){
 			var url = model.urlRoot +"/"+model.get('name') +"?provider="+ this.kmsServiceName;
 			
 			XAUtil.confirmPopup({
-				msg :'Are you sure want to delete ?',
+				msg :'是否确实要删除?',
 				callback : function(){
 					XAUtil.blockUI();
 					model.destroy({
