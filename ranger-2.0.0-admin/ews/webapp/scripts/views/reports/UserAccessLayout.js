@@ -618,7 +618,7 @@ define(function(require) {'use strict';
 				width: '220px',
 				allowClear: true,
 				data: zoneListOptions,
-				placeholder: 'Select Zone Name',
+				placeholder: '选择区域名称',
 			});
 		},
 		onDownload: function(e){

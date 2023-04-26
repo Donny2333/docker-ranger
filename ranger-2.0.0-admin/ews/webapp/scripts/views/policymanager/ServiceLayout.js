@@ -307,7 +307,7 @@ define(function(require){
                 width: '220px',
                 allowClear: true,
                 data: zoneName,
-                placeholder: 'Select Zone Name',
+                placeholder: '选择区域名称',
             }).on('change', function(e){
                 App.vZone.vZoneName = e.val;
                 if(e.added){
