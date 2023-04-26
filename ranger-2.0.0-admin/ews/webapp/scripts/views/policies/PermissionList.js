@@ -678,7 +678,7 @@ define(function(require) {
                 XAUtil.customXEditableForPolicyCond(tmpl.join(''),selectSizeList);
 				//create x-editable for policy conditions
 				this.$('#policyConditions').editable({
-					emptytext : 'Add Conditions',
+					emptytext : '新增策略',
 					value : this.conditions,
 					display: function(value) {
 						var continue_ = false, i = 0, cond = [];
@@ -908,8 +908,8 @@ define(function(require) {
 			var that = this;
 			//create x-editable for permissions
 			this.ui.rowLeveFilter.editable({
-			    emptytext : 'Add Row Filter',
-			    placeholder : 'enter expression',	
+			    emptytext : '新增行屏蔽',
+			    placeholder : '请输入表达式',	
 				value : this.rowFilterExprVal,
 				display: function(value,srcData) {
 					if(_.isNull(value) || _.isEmpty(value)){
