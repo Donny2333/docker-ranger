@@ -329,7 +329,7 @@ define(function(require){
 			var that =this;
 			this.$el.find(this.ui.isDenyAllElse).toggles({
 			    	on : that.model.has('isDenyAllElse') ? that.model.get('isDenyAllElse') : false,
-			    	text : {on : 'True', off : 'False' },
+			    	text : {on : '是', off : '否' },
 			    	width : 80,
 			}).on('click', function(e){
 				XAUtil.checkDirtyFieldForToggle(that.$el.find(that.ui.isDenyAllElse));

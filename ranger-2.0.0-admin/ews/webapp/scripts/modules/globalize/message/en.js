@@ -190,7 +190,7 @@ define(function(require) {
 				userAgent						: 'User Agent',
 				loginTime						: 'Login Time',
 				sessionDetail					: 'Session Detail',
-				ok								: 'OK',
+				ok								: '确定',
 				id								: 'ID',
 				type							: 'Type',
 				resourceId						: 'Resource ID',
