@@ -56,17 +56,17 @@ define(function(require){
 			return _.extend(attrs,{
 				name : {
 					type		: 'Text',
-					title		: 'Service Name *',
+					title		: '服务名称 *',
                                         validators	: ['required',{type:'regexp',regexp:/^[a-zA-Z0-9_-][a-zA-Z0-9\s_-]{0,254}$/,message : localization.tt("validationMessages.nameValidationMsg")}],
 				},
 				description : {
 					type		: 'TextArea',
-					title		: 'Description',
+					title		: '描述',
 					validators	: []
 				},
 				isEnabled : {
 				    type    :  'Radio',
-					title   : 'Active Status',
+					title   : '活动状态',
 					options : function(callback, editor){
 						var activeStatus = _.filter(XAEnums.ActiveStatus,function(m){return m.label != 'Deleted'});
 						var nvPairs = XAUtils.enumToSelectPairs(activeStatus);
@@ -75,7 +75,7 @@ define(function(require){
 				},
 				tagService : {
 					type : 'Select2Remote',
-					title : 'Select Tag Service',
+					title : '选择标签服务',
 					pluginAttr : this.getPluginAttr(),
 					options    : function(callback, editor){
 	                    callback();
@@ -87,7 +87,7 @@ define(function(require){
 		getPluginAttr : function(){
 			return { 
 				closeOnSelect : true,
-				placeholder : 'Select Tag Service',
+				placeholder : '选择标签服务',
 				width :'220px',
 				allowClear: true,
 				initSelection : function (element, callback) {
@@ -123,7 +123,7 @@ define(function(require){
 					return result.text;
 				},
 				formatNoMatches: function(result){
-					return 'No tag service found.';
+					return '暂无数据';
 				}
 			};
 		},
