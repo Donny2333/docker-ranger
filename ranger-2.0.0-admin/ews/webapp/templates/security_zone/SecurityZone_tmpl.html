@@ -19,19 +19,19 @@
     <div class="security-sidebar" data-id="security-sidebar">
         <div class="listData">
             <div class="clearfix row-margin-bottom">
-                <h4 class="pull-left">Security Zones</h4>
+                <h4 class="pull-left">安全区域</h4>
                 {{#if isZoneAdministration}}
                     <a href="#!/zones/create" class="btn-add-security pull-right btn btn-default btn-small" title="Create zone"><i class="icon-plus"></i></a>
                 {{/if}}
             </div>
             <div class="clearfix">
-                <input type="text" class="security-search" data-id="zoneSearch" placeholder="Search">
+                <input type="text" class="security-search" data-id="zoneSearch" placeholder="查询">
             </div>
             <div class="zone-wrap">
                 <ul class="zone-listing" data-id="zoneUlList">
                     {{#ifCond zoneList.length '==' "0"}}
                         <li>
-                            <h4>No Zone Found !
+                            <h4>暂无安全区域 !
                         </li>
                     {{/ifCond}}
                 </ul>
@@ -47,8 +47,8 @@
                 {{#if isZoneAdministration}}
                     <div class="span4">
                         <div class="btn-group-zone pull-right">
-                            <a type="button" href='#!/zones/edit/{{this.zoneModel.attributes.id}}' class="btn btn-default" data-id="editZone"><i class="icon-edit"></i>Edit</a>
-                            <button class="btn btn-danger" data-id="deleteZone"><i class="icon-trash"></i>Delete</button>
+                            <a type="button" href='#!/zones/edit/{{this.zoneModel.attributes.id}}' class="btn btn-default" data-id="editZone"><i class="icon-edit"></i>编辑</a>
+                            <button class="btn btn-danger" data-id="deleteZone"><i class="icon-trash"></i>删除</button>
                         </div>
                     </div>
                 {{/if}}
@@ -64,7 +64,7 @@
             <div class="security-details-default">
                 <div class="default-zone">
                     <img alt="Avatar" class="zoneImg" src="images/defult_zone.png">
-                    <a href="#!/zones/create" class="btn-add-security2 btn-large pull-right" title="Click here to Create new Zone"><i class="icon-plus"></i> Click here to Create new Zone</a>
+                    <a href="#!/zones/create" class="btn-add-security2 btn-large pull-right" title="点击创建新的安全区域"><i class="icon-plus"></i> 点击创建新的安全区域</a>
                 </div>
             </div>
         {{/if}}

@@ -2547,6 +2547,7 @@ textarea:read-only{
   margin-top: 10px;
 }
 .security-details-default {
+  position: relative;
   padding: 15px;
   width: 70%;
   float: left;

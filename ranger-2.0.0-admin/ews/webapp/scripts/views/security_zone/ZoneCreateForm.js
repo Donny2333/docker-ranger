@@ -217,7 +217,7 @@ define(function(require) {
                     includePagination: false,
                     gridOpts: {
                         header: XABackgrid,
-                        emptyText: 'No Zone Data Found!!'
+                        emptyText: '暂无安全区域'
                     }
                 }).render().el);
             },

@@ -385,8 +385,8 @@ define(function(require) {
                 project                     :'Kylin Project Level.',
                 nifiResource                :'NiFi Resource Identifier.',
                 securityZone				:'安全区域',
-                zoneCreate					:'Create Zone',
-                zoneEdit					:'Zone Edit'
+                zoneCreate					:'创建区域',
+                zoneEdit					:'修改区域'
                         },
 			msg : {
 				deletePolicyValidationMsg : 'Policy does not have any settings for the specific resource. Policy will be deleted. Press [Ok] to continue. Press [取消] to edit the policy.',
