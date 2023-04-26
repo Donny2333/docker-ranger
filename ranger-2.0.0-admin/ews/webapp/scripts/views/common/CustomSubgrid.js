@@ -63,7 +63,7 @@ define(function(require){
 				  this.subgrid = new Backgrid.Grid({
 					  columns: this.subcolumns,
 					  collection: this[options.columnCollectionName],
-					  emptyText: "No records found"
+					  emptyText: "暂无数据"
 				  });
 
 				  this.listenTo(Backbone, "SubgridCustomCell:remove", this.render);
