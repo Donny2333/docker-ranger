@@ -499,9 +499,9 @@ define(function(require) {
 				newGroupArr
                                                 .push('<span class="float-left-margin-2"><a href="javascript:void(0);" data-id="showMore" class="" data-name='+type+' model-'+ type +'-id="'
 								+ id
-                                                                + '"><code style=""> + More..</code></a></span><span class="float-left-margin-2"><a href="javascript:void(0);" data-id="showLess" class="" data-name='+type+' model-'+ type +'-id="'
+                                                                + '"><code style=""> 展开..</code></a></span><span class="float-left-margin-2"><a href="javascript:void(0);" data-id="showLess" class="" data-name='+type+' model-'+ type +'-id="'
 								+ id
-								+ '" style="display:none;"><code> - Less..</code></a></span>');
+								+ '" style="display:none;"><code> 折叠..</code></a></span>');
 			}
 			newGroupArr.unshift('<div data-id="groupsDiv">');
 			newGroupArr.push('</div>');
@@ -552,11 +552,11 @@ define(function(require) {
 							+ type
 							+ '-id="'
 							+ model.id
-							+ '"><code style=""> + More..</code></a></span><span class="pull-left float-left-margin-2" ><a href="javascript:void(0);" data-id="showLess" class="" policy-'
+							+ '"><code style=""> 展开..</code></a></span><span class="pull-left float-left-margin-2" ><a href="javascript:void(0);" data-id="showLess" class="" policy-'
 							+ type
 							+ '-id="'
 							+ model.id
-							+ '" style="display:none;"><code> - Less..</code></a></span>');
+							+ '" style="display:none;"><code> 折叠..</code></a></span>');
 		}
 		newGroupArr.unshift('<div data-id="groupsDiv">');
 		newGroupArr.push('</div>');
@@ -603,11 +603,11 @@ define(function(require) {
 							+ userOrGroups
 							+ '-id="'
 							+ model.id
-							+ '"><code style=""> + More..</code></a></span><span class="pull-left float-left-margin-2" ><a href="javascript:void(0);" data-id="showLess" class="" policy-'
+							+ '"><code style=""> 展开..</code></a></span><span class="pull-left float-left-margin-2" ><a href="javascript:void(0);" data-id="showLess" class="" policy-'
 							+ userOrGroups
 							+ '-id="'
 							+ model.id
-							+ '" style="display:none;"><code> - Less..</code></a></span>');
+							+ '" style="display:none;"><code> 折叠..</code></a></span>');
 		}
 		newObjArr.unshift('<div data-id="groupsDiv">');
 		newObjArr.push('</div>');
@@ -1386,9 +1386,9 @@ define(function(require) {
                         if (showMoreLess) {
                                 tagArr.push('<span class="float-left-margin-1"><a href="javascript:void(0);" data-id="showMore" class="" audit-log-id="'
                                                                 + id
-                                                                + '"><code style=""> + More..</code></a></span><span class="float-left-margin-1"><a href="javascript:void(0);" data-id="showLess" class="" audit-log-id="'
+                                                                + '"><code style=""> 展开..</code></a></span><span class="float-left-margin-1"><a href="javascript:void(0);" data-id="showLess" class="" audit-log-id="'
                                                                 + id
-                                                                + '" style="display:none;"><code> - Less..</code></a></span>');
+                                                                + '" style="display:none;"><code> 折叠..</code></a></span>');
                         }
                         tagArr.unshift('<div data-id="tagDiv" class="popovertag">');
                         tagArr.push('</div>');
@@ -1424,8 +1424,8 @@ define(function(require) {
             }
         });
         if (showMoreLess) {
-            newLabelArr.push('<span class="pull-left float-left-margin-2"><a href="javascript:void(0);" data-id="showMore" policy-label-id ="'+ model.id +'"><code style=""> + More..</code></a></span>\
-                    <span class="pull-left float-left-margin-2" ><a href="javascript:void(0);" data-id="showLess" style="display:none;" policy-label-id ="'+ model.id +'"><code> - Less..</code></a></span>');
+            newLabelArr.push('<span class="pull-left float-left-margin-2"><a href="javascript:void(0);" data-id="showMore" policy-label-id ="'+ model.id +'"><code style=""> 展开..</code></a></span>\
+                    <span class="pull-left float-left-margin-2" ><a href="javascript:void(0);" data-id="showLess" style="display:none;" policy-label-id ="'+ model.id +'"><code> 折叠..</code></a></span>');
         }
         newLabelArr.unshift('<div data-id="groupsDiv">');
         newLabelArr.push('</div>');

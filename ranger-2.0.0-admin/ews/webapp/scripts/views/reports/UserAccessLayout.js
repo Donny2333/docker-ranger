@@ -238,9 +238,9 @@ define(function(require) {'use strict';
 								if(model.get('groups').length > 4) {
 									group_str += '<span class="pull-left float-left-margin-2">\
 									<a href="javascript:void(0);" data-id="showMoreAccess" policy-id="'+
-									model.cid+'"><code style=""> + More..</code></a></span>\
+									model.cid+'"><code style=""> 展开..</code></a></span>\
 									<span class="pull-left float-left-margin-2" ><a href="javascript:void(0);" data-id="showLessAccess" policy-id="'+
-									model.cid+'" style="display:none;"><code style=""> - Less..</code></a></span>';}
+									model.cid+'" style="display:none;"><code style=""> 折叠..</code></a></span>';}
 									return group_str;
 								}
 						}
@@ -269,9 +269,9 @@ define(function(require) {'use strict';
 								if(model.get('users').length > 4) {
 									user_str += '<span class="pull-left float-left-margin-2">\
 									<a href="javascript:void(0);" data-id="showMoreAccess" policy-id="'+
-									model.cid+'"><code style=""> + More..</code></a></span>\
+									model.cid+'"><code style=""> 展开..</code></a></span>\
 									<span class="pull-left float-left-margin-2" ><a href="javascript:void(0);" data-id="showLessAccess" policy-id="'+
-									model.cid+'" style="display:none;"><code style=""> - Less..</code></a></span>';}
+									model.cid+'" style="display:none;"><code style=""> 折叠..</code></a></span>';}
 									return user_str;}
 								}
 					}),
@@ -296,9 +296,9 @@ define(function(require) {'use strict';
 							if(model.get('accesses').length > 4) {
 								access_str += '<span class="pull-left float-left-margin-2">\
 								<a href="javascript:void(0);" data-id="showMoreAccess" policy-id="'+
-								model.cid+'"><code style=""> + More..</code></a></span>\
+								model.cid+'"><code style=""> 展开..</code></a></span>\
 								<span class="pull-left float-left-margin-2" ><a href="javascript:void(0);" data-id="showLessAccess" policy-id="'+
-				                model.cid+'" style="display:none;"><code style=""> - Less..</code></a></span>';}
+				                model.cid+'" style="display:none;"><code style=""> 折叠..</code></a></span>';}
 								return access_str;
 						}
 					}),
