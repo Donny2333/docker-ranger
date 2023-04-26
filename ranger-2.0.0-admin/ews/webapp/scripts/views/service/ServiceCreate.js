@@ -115,7 +115,7 @@ define(function(require){
 		onRender: function() {
 			if(!this.editService){
 				this.ui.btnDelete.hide();
-				this.ui.btnSave.html('Add');
+				this.ui.btnSave.html('保存');
 			}
 			this.rForm.show(this.form);
 			this.rForm.$el.dirtyFields();
