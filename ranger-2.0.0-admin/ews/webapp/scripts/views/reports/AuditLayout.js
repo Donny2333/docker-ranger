@@ -208,8 +208,8 @@ define(function(require) {
             this.$el.find('[data-id="r_tableList"] table thead').prepend('<tr>\
                     <th class="renderable ruser"></th>\
                     <th class="renderable ruser"></th>\
-                    <th class="renderable cip" colspan="2">Number Of New</th>\
-                    <th class="renderable cip" colspan="2">Number Of Modified</th>\
+                    <th class="renderable cip" colspan="2">新增</th>\
+                    <th class="renderable cip" colspan="2">修改</th>\
                     <th class="renderable ruser"></th>\
                     <th class="renderable ruser"></th>\
             </tr>');
@@ -1146,7 +1146,7 @@ define(function(require) {
                           editable: false,
                     },
 					eventTime : {
-						label : 'Event Time',
+						label : '时间',
 						cell: "String",
 						click : false,
 						drag : false,
@@ -1821,7 +1821,7 @@ define(function(require) {
                     sortable:false,
                 },
                 eventTime : {
-                    label : 'Event Time',
+                    label : '时间',
                     cell: "String",
                     click : false,
                     drag : false,
