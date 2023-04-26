@@ -221,8 +221,8 @@ define(function(require){
 		},
 		addVisualSearch : function(){
 			var that = this;
-			var searchOpt = ['Module Name','组名','用户名'];
-			var serverAttrName  = [{text : "Module Name", label :"module"},{text : "组名", label :"groupName"},{text : "用户名", label :"userName"}];
+			var searchOpt = ['模块名','组名','用户名'];
+			var serverAttrName  = [{text : "模块名", label :"module"},{text : "组名", label :"groupName"},{text : "用户名", label :"userName"}];
 			var pluginAttr = {
 				      placeholder :localization.tt('h.searchForPermissions'),
 				      container : this.ui.visualSearch,
