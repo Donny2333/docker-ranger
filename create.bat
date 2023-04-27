@@ -4,6 +4,7 @@ docker run -d ^
 -p 6080:6080 ^
 -p 6083:6083 ^
 --name ranger ^
+--hostname ranger ^
 --net my-network --ip 172.20.1.72 ^
 --link mysql8:mysql8 ^
 -v %cd%\java:/usr/share/java ^

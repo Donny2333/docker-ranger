@@ -13,8 +13,8 @@ fi
 # mkdir -p /var/log/solr/ranger_audits
 # chown -R solr:solr /var/log/solr/ranger_audits
 
-/opt/ranger-2.0.0-admin/contrib/solr_for_audit_setup/setup.sh
-/opt/solr/ranger_audit_server/scripts/start_solr.sh
+# /opt/ranger-2.0.0-admin/contrib/solr_for_audit_setup/setup.sh
+# /opt/solr/ranger_audit_server/scripts/start_solr.sh
 
 cd /opt/ranger-2.0.0-admin
 
@@ -27,6 +27,7 @@ apt update && apt install -y python
 fi
 
 rm -rf /opt/ranger-2.0.0-admin/set_globals.log.*
+rm -rf /opt/ranger-2.0.0-admin/ews/webapp/logs.*
 
 RANGER_ADMIN_CONF=/opt/ranger-2.0.0-admin
 /opt/ranger-2.0.0-admin/setup.sh
