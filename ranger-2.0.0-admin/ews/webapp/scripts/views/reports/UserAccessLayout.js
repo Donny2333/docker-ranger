@@ -512,7 +512,7 @@ define(function(require) {'use strict';
             }else if(XAUtil.isMaskingPolicy(this.ui.policyType.val())){
                                 permissions = {
                                         mask:{
-                                                        label: '掩蔽规则',
+                                                        label: '掩码规则',
                                                         cell: "subgrid-custom",
                                                         optionValues : subcolumns,
                                                         editable: false,

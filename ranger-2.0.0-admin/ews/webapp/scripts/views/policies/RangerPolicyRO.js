@@ -196,7 +196,7 @@ define(function(require) {
                 items.push({'itemName': 'rowFilterPolicyItems',title : '行级别规则'});
             }
             if(XAUtils.isMaskingPolicy(this.policy.get('policyType'))){
-                items.push({'itemName': 'dataMaskPolicyItems',title : '掩蔽规则'});
+                items.push({'itemName': 'dataMaskPolicyItems',title : '掩码规则'});
             }
             if(JSON.parse(this.serviceDef.get('options').enableDenyAndExceptionsInPolicies) && XAUtils.isAccessPolicy(this.policy.get('policyType'))){
                 items.push({'itemName': 'allowExceptions',title : '从Allow规则中排除'},

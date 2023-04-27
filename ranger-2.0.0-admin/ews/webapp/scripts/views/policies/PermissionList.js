@@ -559,7 +559,7 @@ define(function(require) {
 
 			//create x-editable for permissions
 			this.ui.maskingType.editable({
-			    emptytext : 'Add Mask Type',
+			    emptytext : '添加掩码规则',
 				source: perms,
 				value : maskTypeVal,
 				placement : 'top',
@@ -610,7 +610,7 @@ define(function(require) {
 				}
 			}).trigger('change');
 			if(!this.accessPermSetForTagMasking){
-				that.ui.maskingType.html('Add Mask Type');
+				that.ui.maskingType.html('添加掩码规则');
 			}
 		},
 		clickOnPermissions : function(that) {

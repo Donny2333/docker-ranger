@@ -587,7 +587,7 @@
 					this.$excludeSupport.show();
 			  		this.$excludeSupport.toggles({
 			  			on: !isExcludes,
-			  			text : {on : 'include', off : 'exclude' },
+			  			text : {on : '包含', off : '排除' },
 			  			width: 80,
 			  		}).on('toggle', function (e, active) {
 			  		    that.value.isExcludes = !active;
@@ -607,7 +607,7 @@
 		  			this.$recursiveSupport.toggles({
 		  				on: isRecursive,
 		  				text : {on : '递归', off : '非递归' },
-		  				width: 120,
+		  				width: 80,
 		  			}).on('toggle', function (e, active) {
 		  				that.value.isRecursive = active;
                         XAUtil.checkDirtyFieldForToggle($(e.currentTarget))
