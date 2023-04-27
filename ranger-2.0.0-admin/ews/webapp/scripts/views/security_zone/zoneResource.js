@@ -170,7 +170,7 @@ define(function(require) {
             this.modal = new Backbone.BootstrapModal({
                 animate: true,
                 content: this.form,
-                title: 'Add/Edit Resources',
+                title: '新增/编辑 资源',
                 okText: '保存',
                 allowCancel: true,
                 escape: true
