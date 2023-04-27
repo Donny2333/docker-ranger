@@ -653,7 +653,7 @@ define(function(require) {
 						                <span>'+obj.label+' : </span>\
 						                <i title="'+localization.tt('validationMessages.jsValidationMsg')+'" class="icon-info-sign" style="float: right;margin-top: 6px;"></i>\
 						            </label>\
-						            <textarea class="textAreaContainer" name="'+obj.name+'" placeholder="Please enter condition.."></textarea>\
+						            <textarea class="textAreaContainer" name="'+obj.name+'" placeholder="请输入规则.."></textarea>\
 						            <div class="jsValidation">\
 						                <a href="javascript:;"class="jsValidationCheck btn btn-defult btn-mini" style="margin: 5px">Syntax check</a>\
 						            </div>\

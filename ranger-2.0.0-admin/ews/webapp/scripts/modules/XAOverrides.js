@@ -794,7 +794,7 @@
 	              });
 	              var $selectComp = $('<select>').attr('data-id','selectComp')
 	              								 .attr('multiple','multiple')
-	              								 .attr('placeholder','Select component');
+	              								 .attr('placeholder','选择组件');
 	              var optionList = _.keys(this.servicePerms);
 	              _.each(optionList, function (val, el) {
 	            	  $selectComp.append("<option>" + val + "</option>");

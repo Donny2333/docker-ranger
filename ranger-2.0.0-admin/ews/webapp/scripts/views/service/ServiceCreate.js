@@ -207,17 +207,17 @@ define(function(require){
                             	   if(_.isArray(msResponse.messageList) && !_.isUndefined(msResponse.messageList[0].message)
                             			   && !_.isEmpty(msResponse.messageList[0].message)){
 	                            		   popupBtnOpts = [{
-	                            			   label: "Show More..",
+	                            			   label: "展开..",
 	                            			   callback:function(e){
 	                            				   console.log(e)
-	                            				   if($(e.currentTarget).text() == 'Show More..'){
+	                            				   if($(e.currentTarget).text() == '展开..'){
 									   var respMsg = _.escape( msResponse.messageList[0].message );
 										   var div = '<div class="showMore connection-error-font"><br>'+respMsg.split('\n').join('<br>')+'</div>'
                         							   $(e.delegateTarget).find('.modal-body').append(div)
-                        							   $(e.currentTarget).html('Show Less..')
+                        							   $(e.currentTarget).html('收缩..')
 	                            				   } else {
 	                            					   $(e.delegateTarget).find('.showMore').remove();
-	                            					   $(e.currentTarget).html('Show More..')
+	                            					   $(e.currentTarget).html('展开..')
 	                            				   }
 	                            				   return false;
 	                            			   }

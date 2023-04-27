@@ -75,7 +75,7 @@ define(function(require){
 			var sourceOptions = _.map(_.groupBy(this.sourceData.policies , function(m){return m.service}), function(m, key){ return { 'id' : key, 'text' : key}; });
 			this.ui.sourceInput.select2({
 				closeOnSelect: true,
-				placeholder: 'Select source name',
+				placeholder: '请选择资源名称',
 				width: '220px',
 				allowClear: true,
 				data:sourceOptions,
@@ -98,7 +98,7 @@ define(function(require){
 			}
 			this.ui.destinationSelect.select2({
 				closeOnSelect: true,
-				placeholder: 'Select service name',
+				placeholder: '请选择服务名称',
 				width: '220px',
 				allowClear: true,
 				data:options,
@@ -303,7 +303,7 @@ define(function(require){
                                         return
                                 }
 			} else {
-                                this.$el.find('.selectFile').text("No file chosen");
+                                this.$el.find('.selectFile').text("没有选择文件");
 			}
 		},
 		selectedFileValidation : function(file){
@@ -369,7 +369,7 @@ define(function(require){
 			this.ui.zoneDestination.attr('disabled',false);
 			this.ui.zoneDestination.select2({
 				closeOnSelect: true,
-				placeholder: 'Select service name',
+				placeholder: '请选择服务名称',
 				width: '220px',
 				allowClear: true,
 				data:zoneNameOption,
@@ -412,7 +412,7 @@ define(function(require){
 		},
                 fileNameClosebtn : function(fileSelected){
                         if(fileSelected && fileSelected.hasOwnProperty('currentTarget')){
-                                this.$el.find('.selectFile').text("No file chosen");
+                                this.$el.find('.selectFile').text("没有选择文件");
                                 this.ui.selectFileValidationMsg.hide();
                         }
 			this.targetFileObj = undefined;

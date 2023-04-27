@@ -589,7 +589,7 @@
                             <span>'+obj.label+' : </span>\
                             <i title="'+localization.tt('validationMessages.jsValidationMsg')+'" class="icon-info-sign pull-right margin-top-6"></i>\
                         </label>\
-                        <textarea class="multiline-condition" data-id="textAreaContainer" name="'+obj.name+'" placeholder="Please enter condition.."></textarea>\
+                        <textarea class="multiline-condition" data-id="textAreaContainer" name="'+obj.name+'" placeholder="请输入策略.."></textarea>\
                    </div>'
             }
             return '<div class="margin-bottom-5 display-block"><label><span>'+obj.label+' : </span></label><input type="input" data-id="inputField" name="'+obj.name+'" ></div>'

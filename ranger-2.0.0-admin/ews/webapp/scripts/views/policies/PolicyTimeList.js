@@ -73,7 +73,7 @@ define(function(require) {
                 data: XAGlobals.Timezones,
                 multiple: false,
                         closeOnSelect: true,
-                        placeholder: 'Select Timezone',
+                        placeholder: '选择时区',
                         maximumSelectionSize : 1,
                         allowClear: true,
                         width:'180px'

@@ -885,7 +885,7 @@ define(function(require) {'use strict';
 			var $el = $(e.currentTarget);
 			var $button = $(e.currentTarget).parents('.btn-group').find('button').find('span').first();
 			if($el.data('id')== "grpSel"){
-				$button.text('Group');
+				$button.text('组');
 				this.ui.userGroup.show();
 				this.setupGroupAutoComplete();
 				this.ui.userName.select2('destroy');
@@ -895,7 +895,7 @@ define(function(require) {'use strict';
 				this.ui.userGroup.val('').hide();
 				this.ui.userName.show();
 				this.setupUserAutoComplete();
-				$button.text('Username');
+				$button.text('用户名');
 			}
 		},
 		setDownloadFormatFilter : function(e){

@@ -40,7 +40,7 @@ function doLogin() {
 		$('#errorBox').show();
 		$('#signInLoading').hide();
 		$('#signIn').removeAttr('disabled');
-		$('#errorBox .errorMsg').text("The username or password you entered is incorrect.");
+		$('#errorBox .errorMsg').text("用户名或密码输入有误.");
 		return false;
 	}
 
@@ -52,7 +52,7 @@ function doLogin() {
                     $('#errorBox').show();
                     $('#signInLoading').hide();
                     $('#signIn').removeAttr('disabled');
-			$('#errorBox .errorMsg').text("Invalid username.");
+			$('#errorBox .errorMsg').text("无效用户名.");
 			return false;
 		}
 	}	

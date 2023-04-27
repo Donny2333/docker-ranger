@@ -275,7 +275,7 @@ define(function(require){
 				closeOnSelect : true,
                                 allowClear: true,
 				width :'220px',
-				placeholder : 'Please select KMS service',
+				placeholder : '请选择KMS服务',
 				initSelection : function (element, callback) {
                                         callback({ id : element.val(), text : _.escape( element.val() )});
 				},

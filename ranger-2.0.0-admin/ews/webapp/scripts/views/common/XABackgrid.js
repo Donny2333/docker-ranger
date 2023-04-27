@@ -65,7 +65,7 @@ define(function(require){
 		render: function () {
 			this.$el.empty().append(this.template({
 				name: this.column.get('name'),
-				placeholder: this.column.get('placeholder') || "Search",
+				placeholder: this.column.get('placeholder') || "搜索",
 				style : this.column.get('headerSearchStyle')
 			}));
 			this.$el.addClass('renderable');

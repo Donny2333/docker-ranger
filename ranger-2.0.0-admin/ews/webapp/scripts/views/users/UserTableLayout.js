@@ -693,7 +693,7 @@ define(function(require){
                     });
                     var html = '<div class="row-fluid">\
                                     <div class="span12">\
-                                        <input type="text" data-id="userInput" placeholder="Search Users" class= "users-list-search">\
+                                        <input type="text" data-id="userInput" placeholder="搜索用户" class= "users-list-search">\
                                         <div class="pull-right link-tag copyUsers btn btn-mini" title="Copy All Users Name"><i class="icon-copy"></i></div>\
                                     </div>\
                                 </div>';
