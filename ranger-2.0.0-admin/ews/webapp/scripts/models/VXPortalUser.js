@@ -48,7 +48,7 @@ define(function(require){
 				firstName : {
 					type		: 'TextFieldWithIcon',
 					title		: localization.tt("lbl.firstName")+' *',
-                                        validators  : ['required',{type:'regexp',regexp:/^([a-zA-Z0-9_]|[\u00C0-\u017F])([a-zA-Z0-9\s_. -@]|[\u00C0-\u017F])+$/i,message :'Invalid first name.'}],
+					validators  : ['required',{type:'regexp',regexp:/^([a-zA-Z0-9_]|[\u00C0-\u017F]|[\u4e00-\u9fa5])+$/i,message :'Invalid first name.'}],
 					editorAttrs : { 'placeholder' : localization.tt("lbl.firstName")},
 					errorMsg    :localization.tt('validationMessages.firstNameValidationMsg'),
 					
@@ -56,7 +56,7 @@ define(function(require){
 				lastName : {
 					type		: 'TextFieldWithIcon',
 					title		: localization.tt("lbl.lastName"),
-                                        validators  : ['required',{type:'regexp',regexp:/^([a-zA-Z0-9_]|[\u00C0-\u017F])([a-zA-Z0-9\s_. -@]|[\u00C0-\u017F])+$/i,message :'Invalid last name.'}],
+					validators  : ['required',{type:'regexp',regexp:/^([a-zA-Z0-9_]|[\u00C0-\u017F]|[\u4e00-\u9fa5])+$/i,message :'Invalid last name.'}],
 					editorAttrs : { 'placeholder' : localization.tt("lbl.lastName")},
 					errorMsg    :localization.tt('validationMessages.lastNameValidationMsg'),
 				},

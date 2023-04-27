@@ -2,7 +2,8 @@
   "name": "security-admin",
   "version": "2.0.0",
   "scripts": {
-    "r.js": "r.js"
+    "r.js": "r.js",
+    "build": "sh r.sh -o minify.build.js"
   },
   "devDependencies": {
     "requirejs": "^2.3.6"

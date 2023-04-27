@@ -68,7 +68,7 @@ define(function(require){
 				name : {
 					type		: 'TextFieldWithIcon',
 					title		: localization.tt("lbl.groupName") +' *',
-					validators  : ['required',{type:'regexp',regexp:/^([A-Za-z0-9_]|[\u00C0-\u017F])([a-z0-9,._\-+/@= ]|[\u00C0-\u017F])+$/i,message :' Invalid group name'}],
+					validators  : ['required',{type:'regexp',regexp:/^([A-Za-z0-9_]|[\u00C0-\u017F]|[\u4e00-\u9fa5])([a-z0-9,._\-+/@= ]|[\u00C0-\u017F]|[\u4e00-\u9fa5])+$/i,message :' Invalid group name'}],
                     editorAttrs : { 'maxlength': 255},
                     errorMsg    : localization.tt('validationMessages.groupNameValidationMsg'),
 				},
