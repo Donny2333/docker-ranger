@@ -158,7 +158,7 @@ define(function(require){
 			this.ui.servicesName.select2({
 				multiple: true,
 				closeOnSelect: true,
-				placeholder: 'Select Service Name',
+				placeholder: '选择服务名称',
 			    width: '530px',
 			    allowClear: true,
 			    data: options

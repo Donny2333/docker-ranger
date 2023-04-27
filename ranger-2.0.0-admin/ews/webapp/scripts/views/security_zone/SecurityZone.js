@@ -230,21 +230,21 @@ define(function(require) {
             var that = this;
             var col = {
                 serviceName: {
-                    label: 'Service Name',
+                    label: '服务名称',
                     cell: 'string',
                     editable: false,
                     sortable: false
                 },
 
                 serviceTypes: {
-                    label: 'Service Type',
+                    label: '服务类型',
                     cell: 'string',
                     editable: false,
                     sortable: false
                 },
 
                 resource: {
-                    label: 'Resource',
+                    label: '资源',
                     cell: 'html',
                     editable: false,
                     sortable: false,

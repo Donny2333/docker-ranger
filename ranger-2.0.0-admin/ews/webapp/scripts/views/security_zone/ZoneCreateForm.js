@@ -182,7 +182,7 @@ define(function(require) {
                 $selectServiceName.select2({
                     multiple: true,
                     closeOnSelect: true,
-                    placeholder: 'Select Service Name',
+                    placeholder: '选择服务名称',
                     allowClear: true,
                     data: options || [],
                     initSelection: function(element, callback) {
@@ -226,21 +226,21 @@ define(function(require) {
                 var that = this;
                 var col = {
                     name: {
-                        label: 'Service Name',
+                        label: '服务名称',
                         cell: 'string',
                         editable: false,
                         sortable: false
                     },
 
                     serviceType: {
-                        label: 'Service Type',
+                        label: '服务类型',
                         cell: 'string',
                         editable: false,
                         sortable: false
                     },
 
                     resource: {
-                        label: 'Resource',
+                        label: '资源',
                         cell: 'html',
                         editable: false,
                         sortable: false,

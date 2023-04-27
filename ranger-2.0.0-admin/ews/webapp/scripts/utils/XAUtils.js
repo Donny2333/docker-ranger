@@ -1530,7 +1530,7 @@ define(function(require) {
     XAUtils.getTagBaseServices = function(){
         return {
             closeOnSelect : true,
-            placeholder : 'Select Tag Services',
+            placeholder : '搜索标签服务',
             width :'600px',
             allowClear: true,
             multiple: true,

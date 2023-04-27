@@ -179,8 +179,8 @@ define(function(require) {
 					<th class="renderable ruser"></th>\
 					<th class="renderable ruser"></th>\
 					<th class="renderable cip"></th>\
-					<th class="renderable cip">Service</th>\
-					<th class="renderable name">Resource</th>\
+					<th class="renderable cip">服务</th>\
+					<th class="renderable name">资源</th>\
 					<th class="renderable cip"></th>\
 					<th class="renderable cip"></th>\
 					<th class="renderable cip"> </th>\
@@ -200,8 +200,8 @@ define(function(require) {
 					<th class="renderable ruser"></th>\
                                         <th class="renderable ruser"></th>\
 					<th class="renderable ruser"></th>\
-					<th class="renderable cip" colspan="3">Policy ( Time )<i class="icon-info-sign m-l-sm" data-id ="policyTimeDetails"></th>\
-                    <th class="renderable cip" colspan="3">Tag ( Time )<i class="icon-info-sign m-l-sm" data-id ="tagPolicyTimeDetails"></th>\
+					<th class="renderable cip" colspan="3">策略 ( 时间 )<i class="icon-info-sign m-l-sm" data-id ="policyTimeDetails"></th>\
+                    <th class="renderable cip" colspan="3">标签 ( 时间 )<i class="icon-info-sign m-l-sm" data-id ="tagPolicyTimeDetails"></th>\
 			 	</tr>');
 		},
         modifyUserSyncTableSubcolumns : function(){
@@ -297,8 +297,8 @@ define(function(require) {
 					 this.pluginInfoList = new VXPolicyExportAuditList();
                      this.renderPluginInfoTable();
 					 this.modifyPluginStatusTableSubcolumns();
-                     XAUtils.customPopover(this.$el.find('[data-id ="policyTimeDetails"]'),'Policy (Time details)',localization.tt('msg.policyTimeDetails'),'left');
-                     XAUtils.customPopover(this.$el.find('[data-id ="tagPolicyTimeDetails"]'),'Tag Policy (Time details)',localization.tt('msg.tagPolicyTimeDetails'),'left');
+                     XAUtils.customPopover(this.$el.find('[data-id ="policyTimeDetails"]'),'策略 (时间信息)',localization.tt('msg.policyTimeDetails'),'left');
+                     XAUtils.customPopover(this.$el.find('[data-id ="tagPolicyTimeDetails"]'),'标签 策略 (时间信息)',localization.tt('msg.tagPolicyTimeDetails'),'left');
 					 //To use existing collection
 					 this.pluginInfoList.url = 'service/plugins/plugins/info';
 					 this.pluginInfoList.modelAttrName = 'pluginInfoList';
@@ -344,12 +344,12 @@ define(function(require) {
 				                  {text : '资源名称',label :'resourcePath'},
 			                      {text : '服务名称',label :'repoName'},{text : '策略ID',label :'policyId'},
 			                      {text : '服务类型',label :'repoType','multiple' : true, 'optionsArr' : serverListForRepoType},
-			                      {text : '报表',label :'accessResult', 'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AccessResult)},
+			                      {text : '结果',label :'accessResult', 'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AccessResult)},
 			                      {text : '访问类型',label :'accessType'},{text : 'Access Enforcer',label :'aclEnforcer'},
 			                      {text : '客户端IP',label :'clientIP'},{text : '标签',label :'tags'},
 			                      {text : '资源类型',label : 'resourceType'},{text : '集群名',label : 'cluster'},
                                   {text : '区域名称',label : 'zoneName'},{text : localization.tt("lbl.agentHost"), label :"agentHost"}];
-            var searchOpt = ['资源类型','开始日期','结束日期','应用','用户','服务名称','服务类型','资源名称','访问类型','报表','Access Enforcer',
+            var searchOpt = ['资源类型','开始日期','结束日期','应用','用户','服务名称','服务类型','资源名称','访问类型','结果','Access Enforcer',
             '客户端IP','标签','集群名', '区域名称', '排除用户', localization.tt("lbl.agentHost")];//,'策略ID'
                         this.clearVisualSearch(this.accessAuditList, serverAttrName);
                         this.searchInfoArr =[{text :'Access Enforcer', info :localization.tt('msg.accessEnforcer')},
@@ -360,7 +360,7 @@ define(function(require) {
                                             {text :'结束日期'       , info :localization.tt('h.endDate')},
                                             {text :'资源名称' 	, info :localization.tt('msg.resourceName')},
                                             {text :'资源类型'  , info :localization.tt('msg.resourceTypeMsg')},
-                                            {text :'报表'			, info :localization.tt('msg.resultMsg')},
+                                            {text :'结果'			, info :localization.tt('msg.resultMsg')},
                                             {text :'服务名称' 	, info :localization.tt('h.serviceNameMsg')},
                                             {text :'服务类型' 	, info :localization.tt('h.serviceTypeMsg')},
                                             {text :'开始日期'     , info :localization.tt('h.startDate')},
@@ -372,7 +372,7 @@ define(function(require) {
                         XAUtils.searchInfoPopover(this.searchInfoArr , this.ui.iconSearchInfo , 'bottom');
                         //Set query(search filter values in query)
                         if(_.isEmpty(App.vsHistory.bigData)){
-                                query = '"Start Date": "'+Globalize.format(new Date(),"MM/dd/yyyy")+'"';
+                                query = '"开始时间": "'+Globalize.format(new Date(),"MM/dd/yyyy")+'"';
                                 App.vsHistory.bigData.push(new Backbone.Model({'category':'开始日期', value:Globalize.format(new Date(),"MM/dd/yyyy")}));
                         }else{
                                 _.map(App.vsHistory.bigData, function(a){ query += '"'+a.get('category')+'":"'+a.get('value')+'"'; });
@@ -430,11 +430,11 @@ define(function(require) {
 								});
 								callback(serviveDefs);
 								break;
-							case '报表':
+							case '结果':
 				                callback(XAUtils.hackForVSLabelValuePairs(XAEnums.AccessResult));
 				                break;  
 							case '开始日期' :
-								var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
+								var endDate, models = that.visualSearch.searchQuery.where({category:"结束时间"});
 								if(models.length > 0){
 									var tmpmodel = models[0];
 									endDate = tmpmodel.attributes.value;
@@ -442,7 +442,7 @@ define(function(require) {
 								XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
 								break;
 							case '结束日期' :
-								var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
+								var startDate, models = that.visualSearch.searchQuery.where({category:"开始时间"});
 								if(models.length > 0){
 									var tmpmodel = models[0];
 									startDate = tmpmodel.attributes.value;
@@ -473,11 +473,11 @@ define(function(require) {
         },
 		addSearchForAdminTab : function(){
 			var that = this;
-			var searchOpt = ["Audit Type", "User", "Actions", "Session ID", "Start Date", "End Date"];
-			var serverAttrName  = [{text : "Audit Type", label :"objectClassType",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.ClassTypes)},
-                                               {text : "User", label :"owner"}, {text :  "Session ID", label :"sessionId"},
+			var searchOpt = ["审核类型", "用户", "操作", "会话ID", "开始时间", "结束时间"];
+			var serverAttrName  = [{text : "审核类型", label :"objectClassType",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.ClassTypes)},
+                                               {text : "用户", label :"owner"}, {text :  "会话ID", label :"sessionId"},
                                                {text : '开始日期',label :'startDate'},{text : '结束日期',label :'endDate'},
-                                               {text : "Actions", label :"action",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAGlobals.ActionType)},];
+                                               {text : "操作", label :"action",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAGlobals.ActionType)},];
 			
                         var auditList = [],query = '', actionTypeList = [];
 			_.each(XAEnums.ClassTypes, function(obj){
@@ -496,8 +496,8 @@ define(function(require) {
 			})
 			if(!_.isUndefined(App.sessionId)){
                                 App.vsHistory.admin = [] ;
-				query = '"Session ID": "'+App.sessionId+'"';
-                                App.vsHistory.admin.push(new Backbone.Model({'category':'Session ID', value:App.sessionId}));
+				query = '"会话ID": "'+App.sessionId+'"';
+                                App.vsHistory.admin.push(new Backbone.Model({'category':'会话ID', value:App.sessionId}));
 				delete App.sessionId;
                         }else{
                                 _.map(App.vsHistory.admin, function(a){ query += '"'+a.get('category')+'":"'+a.get('value')+'"'; });
@@ -510,14 +510,14 @@ define(function(require) {
 				      callbacks :  { 
 				    	  valueMatches :function(facet, searchTerm, callback) {
 								switch (facet) {
-									case 'Audit Type':
+									case '审核类型':
 										callback(_.sortBy(auditList, 'label'));
 										break;
-									case 'Actions':
+									case '操作':
 										callback(actionTypeList);
 										break;
 									case '开始日期' :
-											var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
+											var endDate, models = that.visualSearch.searchQuery.where({category:"结束时间"});
 											if(models.length > 0){
 												var tmpmodel = models[0];
 												endDate = tmpmodel.attributes.value;
@@ -525,7 +525,7 @@ define(function(require) {
 											XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
 											break;
 									case '结束日期' :
-										var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
+										var startDate, models = that.visualSearch.searchQuery.where({category:"开始时间"});
 										if(models.length > 0){
 											var tmpmodel = models[0];
 											startDate = tmpmodel.attributes.value;
@@ -543,11 +543,11 @@ define(function(require) {
 		},
 		addSearchForLoginSessionTab : function(){
                         var that = this , query = '' ;
-			var searchOpt = ["Session ID", "Login ID", "报表", "Login Type", "IP", "User Agent", "Start Date","End Date"];
-			var serverAttrName  = [{text : "Session ID", label :"id"}, {text : "Login ID", label :"loginId"},
-			                       {text : "报表", label :"authStatus",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AuthStatus)},
-			                       {text : "Login Type", label :"authType",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AuthType)},
-			                       {text : "IP", label :"requestIP"},{text :"User Agent", label :"requestUserAgent"},
+			var searchOpt = ["会话ID", "登录ID", "结果", "登录类型", "IP", "客户端", "开始时间","结束时间"];
+			var serverAttrName  = [{text : "会话ID", label :"id"}, {text : "登录ID", label :"loginId"},
+			                       {text : "结果", label :"authStatus",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AuthStatus)},
+			                       {text : "登录类型", label :"authType",'multiple' : true, 'optionsArr' : XAUtils.enumToSelectLabelValuePairs(XAEnums.AuthType)},
+			                       {text : "IP", label :"requestIP"},{text :"客户端", label :"requestUserAgent"},
 			                       {text : '开始日期',label :'startDate'},{text : '结束日期',label :'endDate'} ];
 									
                         _.map(App.vsHistory.loginSession, function(m){ query += '"'+m.get('category')+'":"'+m.get('value')+'"'; });
@@ -559,14 +559,14 @@ define(function(require) {
 				      callbacks :  { 
 				    	  valueMatches :function(facet, searchTerm, callback) {
 								switch (facet) {
-									case '报表':
+									case '结果':
 										var authStatusList = _.filter(XAEnums.AuthStatus, function(obj){
 											if(obj.label != XAEnums.AuthStatus.AUTH_STATUS_UNKNOWN.label)
 												return obj;
 										});
 										callback(XAUtils.hackForVSLabelValuePairs(authStatusList));
 										break;
-									case 'Login Type':
+									case '登录类型':
 										var authTypeList = _.filter(XAEnums.AuthType, function(obj){
 											if(obj.label != XAEnums.AuthType.AUTH_TYPE_UNKNOWN.label)
 												return obj;
@@ -574,7 +574,7 @@ define(function(require) {
 										callback(XAUtils.hackForVSLabelValuePairs(authTypeList));
 										break;	
 									case '开始日期' :
-											var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
+											var endDate, models = that.visualSearch.searchQuery.where({category:"结束时间"});
 											if(models.length > 0){
 												var tmpmodel = models[0];
 												endDate = tmpmodel.attributes.value;
@@ -582,7 +582,7 @@ define(function(require) {
 											XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
 											break;
 									case '结束日期' :
-										var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
+										var startDate, models = that.visualSearch.searchQuery.where({category:"开始时间"});
 										if(models.length > 0){
 											var tmpmodel = models[0];
 											startDate = tmpmodel.attributes.value;
@@ -599,10 +599,10 @@ define(function(require) {
 		},
 		addSearchForAgentTab : function(){
                         var that = this , query = '';
-                        var searchOpt = ["服务名称", "Plugin ID", "Plugin IP", "Http Response Code", "Start Date","End Date", "Cluster Name"];
-                        var serverAttrName  = [{text : "Plugin ID", label :"agentId"}, {text : "Plugin IP", label :"clientIP"},
-			                       {text : "服务名称", label :"repositoryName"},{text : "Http Response Code", label :"httpRetCode"},
-			                       {text : "Export Date", label :"createDate"},
+                        var searchOpt = ["服务名称", "插件ID", "插件IP", "HTTP返回码", "开始时间","结束时间", "集群名"];
+                        var serverAttrName  = [{text : "插件ID", label :"agentId"}, {text : "插件IP", label :"clientIP"},
+			                       {text : "服务名称", label :"repositoryName"},{text : "HTTP返回码", label :"httpRetCode"},
+			                       {text : "导出日期", label :"createDate"},
 			                       {text : '开始日期',label :'startDate'},{text : '结束日期',label :'endDate'},
 				                   {text : '集群名',label :'cluster'}];
                         _.map(App.vsHistory.plugin, function(m){ query += '"'+m.get('category')+'":"'+m.get('value')+'"'; });
@@ -621,11 +621,11 @@ define(function(require) {
 											callback(serviceList.map(function(model){return model.get('name');}));
 										});
 										break;
-								    case 'Audit Type':
+								    case '审核类型':
 										callback([]);
 										break;
 									case '开始日期' :
-											var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
+											var endDate, models = that.visualSearch.searchQuery.where({category:"结束时间"});
 											if(models.length > 0){
 												var tmpmodel = models[0];
 												endDate = tmpmodel.attributes.value;
@@ -633,7 +633,7 @@ define(function(require) {
 											XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
 											break;
 									case '结束日期' :
-										var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
+										var startDate, models = that.visualSearch.searchQuery.where({category:"开始时间"});
 										if(models.length > 0){
 											var tmpmodel = models[0];
 											startDate = tmpmodel.attributes.value;
@@ -715,7 +715,7 @@ define(function(require) {
             var serverAttrName  = [{text : localization.tt("lbl.userName"), label :"userName"},{text : localization.tt("lbl.syncSource"), label :"syncSource"},
                                    {text : '开始日期',label :'startDate'},{text : '结束日期',label :'endDate'}];
             if(_.isEmpty(App.vsHistory.userSync)){
-                query = '"Start Date": "'+Globalize.format(new Date(),"MM/dd/yyyy")+'"';
+                query = '"开始时间": "'+Globalize.format(new Date(),"MM/dd/yyyy")+'"';
                 App.vsHistory.userSync.push(new Backbone.Model({'category':'开始日期', value:Globalize.format(new Date(),"MM/dd/yyyy")}));
             }else{
                 _.map(App.vsHistory.userSync, function(a){ query += '"'+a.get('category')+'":"'+a.get('value')+'"'; });
@@ -728,11 +728,11 @@ define(function(require) {
                 callbacks :  {
                     valueMatches :function(facet, searchTerm, callback) {
                         switch (facet) {
-                            case 'Sync Source':
+                            case '同步源':
                                     callback( _.map(XAEnums.UserSyncSource, function(obj){ return obj.label; }) );
                                     break;
                             case '开始日期' :
-                                    var endDate, models = that.visualSearch.searchQuery.where({category:"End Date"});
+                                    var endDate, models = that.visualSearch.searchQuery.where({category:"结束时间"});
                                     if(models.length > 0){
                                         var tmpmodel = models[0];
                                         endDate = tmpmodel.attributes.value;
@@ -740,7 +740,7 @@ define(function(require) {
                                     XAUtils.displayDatepicker(that.ui.visualSearch, facet, endDate, callback);
                                     break;
                             case '结束日期' :
-                                    var startDate, models = that.visualSearch.searchQuery.where({category:"Start Date"});
+                                    var startDate, models = that.visualSearch.searchQuery.where({category:"开始时间"});
                                     if(models.length > 0){
                                         var tmpmodel = models[0];
                                         startDate = tmpmodel.attributes.value;
@@ -867,7 +867,7 @@ define(function(require) {
 			if(!_.isUndefined(log.get('previousValue')) && !_.isEmpty(log.get('previousValue'))){
 				infoJson = JSON.parse(log.get('previousValue'))
 				if(_.isUndefined(infoJson) || _.isEmpty(infoJson)){
-					return '<h5> No User details found !!</h5>';
+					return '<h5> 暂无用户 !!</h5>';
 				} 
 			}
 			_.each(infoJson, function(val, key){
@@ -927,21 +927,21 @@ define(function(require) {
                                                                         return action;
 							} else{	
 								 if(rawValue == XAEnums.ClassTypes.CLASS_TYPE_XA_ASSET.value || rawValue == XAEnums.ClassTypes.CLASS_TYPE_RANGER_SERVICE.value)
-								 	 html = 	'Service '+action+'d '+'<b>'+name+'</b>';
+								 	 html = 	'服务 '+action+'d '+'<b>'+name+'</b>';
 								 else if((rawValue == XAEnums.ClassTypes.CLASS_TYPE_XA_RESOURCE.value || rawValue == XAEnums.ClassTypes.CLASS_TYPE_RANGER_POLICY.value))
-									 html = 	'Policy '+action+'d '+'<b>'+name+'</b>';
+									 html = 	'策略 '+action+'d '+'<b>'+name+'</b>';
 								 else if(rawValue == XAEnums.ClassTypes.CLASS_TYPE_XA_USER.value)
-									 html = 	'User '+action+'d '+'<b>'+name+'</b>';
+									 html = 	'用户 '+action+'d '+'<b>'+name+'</b>';
 								 else if(rawValue == XAEnums.ClassTypes.CLASS_TYPE_XA_GROUP.value)
-									 html = 	'Group '+action+'d '+'<b>'+name+'</b>';
+									 html = 	'组 '+action+'d '+'<b>'+name+'</b>';
 								 else if(rawValue  == XAEnums.ClassTypes.CLASS_TYPE_USER_PROFILE.value)
-									 html = 	'User profile '+action+'d '+'<b>'+name+'</b>';
+									 html = 	'用户 profile '+action+'d '+'<b>'+name+'</b>';
 								 else if(rawValue  == XAEnums.ClassTypes.CLASS_TYPE_PASSWORD_CHANGE.value)
-									 html = 	'User profile '+action+'d '+'<b>'+name+'</b>';
+									 html = 	'用户 profile '+action+'d '+'<b>'+name+'</b>';
 								 else if(rawValue  == XAEnums.ClassTypes.CLASS_TYPE_RANGER_SECURITY_ZONE.value)
-									 html =     'Security Zone '+action+'d '+'<b>'+name+'</b>';
+									 html =     '安全区域 '+action+'d '+'<b>'+name+'</b>';
                                                                 else if(rawValue  == XAEnums.ClassTypes.CLASS_TYPE_RANGER_ROLE.value)
-                                                                         html =     'Role '+action+'d '+'<b>'+name+'</b>';
+                                                                         html =     '角色 '+action+'d '+'<b>'+name+'</b>';
 								 return html;
 						    }
 						}
@@ -1174,7 +1174,7 @@ define(function(require) {
 						editable:false
 					},
 					repoName : {
-						label : 'Name / Type',
+						label : '名称 / 类型',
 						cell: "html",
 						click : false,
 						drag : false,
@@ -1188,7 +1188,7 @@ define(function(require) {
 						})
 					},
 					resourceType: {
-						label : 'Name / Type',
+						label : '名称 / 类型',
 						cell: "html",
 						click: false,
 						formatter: _.extend({},Backgrid.CellFormatter.prototype,{
@@ -1293,7 +1293,7 @@ define(function(require) {
 					},
 
                                         eventCount : {
-                                                label : 'Event Count',
+                                                label : '事件计数',
 						cell: "string",
 						click : false,
 						drag : false,

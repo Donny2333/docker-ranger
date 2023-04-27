@@ -20,11 +20,11 @@ language governing permissions and limitations under the License. --}}
 <div class="row-fluid">
     <div class="span12">
         <div class="panel panel-default m-b-md">
-            <div class="panel-header" data-id="panel">Zone Administration<i class="icon-chevron-up pull-right"></i></div>
+            <div class="panel-header" data-id="panel">区域管理<i class="icon-chevron-up pull-right"></i></div>
             <div class="panel-content">
                 <form class="form-horizontal form-administration">
                     <div class="control-group">
-                        <label class="control-label" for="inputEmail">Admin Users</label>
+                        <label class="control-label" for="inputEmail">管理员用户</label>
                         <div class="controls">
                             {{#compare this.zoneModel.attributes.adminUsers "eq" ''}}
                                 <span> -- </span>
@@ -36,7 +36,7 @@ language governing permissions and limitations under the License. --}}
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputEmail">Admin Usergroups</label>
+                        <label class="control-label" for="inputEmail">管理员用户组</label>
                         <div class="controls">
                             {{#compare this.zoneModel.attributes.adminUserGroups "eq" ''}}
                                 <span> -- </span>
@@ -48,7 +48,7 @@ language governing permissions and limitations under the License. --}}
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputEmail">Auditor Users</label>
+                        <label class="control-label" for="inputEmail">审计员用户</label>
                         <div class="controls">
                             {{#compare this.zoneModel.attributes.auditUsers "eq" ''}}
                                 <span> -- </span>
@@ -60,7 +60,7 @@ language governing permissions and limitations under the License. --}}
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputEmail">Auditor Usergroups</label>
+                        <label class="control-label" for="inputEmail">审计员用户组</label>
                         <div class="controls">
                             {{#compare this.zoneModel.attributes.auditUserGroups "eq" ''}}
                                 <span> -- </span>
@@ -77,14 +77,14 @@ language governing permissions and limitations under the License. --}}
     </div>
 </div>
 <div class="panel panel-default m-b-md">
-    <div class="panel-header" data-id="panel">Zone Tag Services <i class="icon-chevron-up pull-right"></i></div>
+    <div class="panel-header" data-id="panel">区域标签服务<i class="icon-chevron-up pull-right"></i></div>
     <div class="panel-content">
         {{#if tagServices}}
             {{#each tagServices}}
                 <span class="label label-info">{{this}}</span>
             {{/each}}
         {{else}}
-            <span> No tag based services are associated with this zone </span>
+            <span> 没有基于标记的服务与此区域关联 </span>
         {{/if}}
     </div>
 </div>
