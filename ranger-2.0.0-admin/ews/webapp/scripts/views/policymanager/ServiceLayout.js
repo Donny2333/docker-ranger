@@ -190,8 +190,8 @@ define(function(require){
 			});
             var modal = new Backbone.BootstrapModal({
 				content	: view,
-				title	: 'Export Policy',
-				okText  :"Export",
+				title	: '导出策略',
+				okText  :"导出",
 				animate : true
 			}).open();
 			
@@ -239,8 +239,8 @@ define(function(require){
             });
 			var modal = new Backbone.BootstrapModal({
 				content	: view,	
-				okText 	:"Import",
-                                title	: App.vZone && App.vZone.vZoneName && !_.isEmpty(App.vZone.vZoneName) ? 'Import Policy For Zone' : 'Import Policy',
+				okText 	:"导入",
+                                title	: App.vZone && App.vZone.vZoneName && !_.isEmpty(App.vZone.vZoneName) ? '为安全区域导入策略' : '导入策略',
 				animate : true
 			}).open();
 

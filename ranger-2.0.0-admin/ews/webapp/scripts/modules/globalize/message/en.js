@@ -389,7 +389,7 @@ define(function(require) {
                 zoneEdit					:'修改区域'
                         },
 			msg : {
-				deletePolicyValidationMsg : '策略没有针对特定资源的任何设置。策略将被删除。点击[确定]继续。点击[取消]编辑策略.',
+				deletePolicyValidationMsg : '策略没有针对特定资源的任何设置.策略将被删除.点击[确定]继续.点击[取消]编辑策略.',
 				areYouSureWantToDelete	  : '是否确实要删除?',
 				policyDeleteMsg 		  : '功删除策略',
 				policyNotAddedMsg		  : '未添加策略!',
@@ -440,9 +440,9 @@ define(function(require) {
                 pleaseSelectUser        : 'Please select user.',
                 pleaseSelectGroup       : 'Please select group.',
                 addSelectedUserGroup	: 'Please add selected user/group to permissions else user/group will not be added.',
-                maskingPolicyInfoMsg   	: '请确保此策略中列出的用户/组可以通过<b>访问策略</b>访问该列。此策略不会隐式授予对该列的访问权限。',
-                maskingPolicyInfoMsgForTagBased   	: '请确保此策略中列出的用户/组可以通过<b>访问策略</b>访问标记。此策略不会隐式授予对标记的访问权限。',
-                rowFilterPolicyInfoMsg 	: '请确保此策略中列出的用户/组可以通过<b>访问策略</b>访问该表。此策略不会隐式授予对该表的访问权限。',
+                maskingPolicyInfoMsg   	: '请确保此策略中列出的用户/组可以通过<b>访问策略</b>访问该列.此策略不会隐式授予对该列的访问权限.',
+                maskingPolicyInfoMsgForTagBased   	: '请确保此策略中列出的用户/组可以通过<b>访问策略</b>访问标记.此策略不会隐式授予对标记的访问权限.',
+                rowFilterPolicyInfoMsg 	: '请确保此策略中列出的用户/组可以通过<b>访问策略</b>访问该表.此策略不会隐式授予对该表的访问权限.',
                 udfPolicyViolation      : '<b> Warning !!</b>  : UDF create is a privileged operation. Please make sure you grant them to only trusted users.',
                 noServiceToExport       :'No service found to export policies.',
                 noServiceToImport       :'No service found to import policies.',
@@ -480,16 +480,16 @@ define(function(require) {
 
 			},
 			plcHldr : {
-				search 						:'Search',
-				searchByResourcePath		:'Search by resource path'
+				search 						:'搜索',
+				searchByResourcePath		:'通过资源路径搜索'
 			},
 			dialogMsg :{
-				preventNavPolicyForm : '正在编辑策略表单。请在离开之前保存/取消更改!',
-				preventNavRepositoryForm : '存储库表单编辑正在进行中。请在离开之前保存/取消更改!',
-				preventNavUserForm : '用户表单编辑正在进行中。请在离开之前保存/取消更改!',
-				preventNavGroupForm : '正在编辑组表单。请在离开之前保存/取消更改!',
-				preventNavUserList : '某些用户/组已被编辑。请在离开之前保存您的更改!',
-				preventNavZoneForm : '区域表单编辑正在进行中。请在离开之前保存/取消更改!'
+				preventNavPolicyForm : '正在编辑策略表单.请在离开之前保存/取消更改!',
+				preventNavRepositoryForm : '存储库表单编辑正在进行中.请在离开之前保存/取消更改!',
+				preventNavUserForm : '用户表单编辑正在进行中.请在离开之前保存/取消更改!',
+				preventNavGroupForm : '正在编辑组表单.请在离开之前保存/取消更改!',
+				preventNavUserList : '某些用户/组已被编辑.请在离开之前保存您的更改!',
+				preventNavZoneForm : '区域表单编辑正在进行中.请在离开之前保存/取消更改!'
 				
 			},	
 			validationMessages : {
