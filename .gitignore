@@ -1,9 +1,11 @@
+.idea/
 logs/
 conf/
 java/
 tmp/
 solr/
 node_modules/
+ranger-2.0.0-usersync/
 
 *.zip
 *.tar.gz

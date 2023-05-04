@@ -10,6 +10,7 @@ docker run -d ^
 -v %cd%\java:/usr/share/java ^
 -v %cd%\sh\start.sh:/root/start.sh ^
 -v %cd%\ranger-2.0.0-admin:/opt/ranger-2.0.0-admin ^
+-v %cd%\ranger-2.0.0-usersync:/opt/ranger-2.0.0-usersync ^
 -v %cd%\solr:/opt/solr ^
 -v %cd%\conf:/etc/ranger/admin/conf ^
 --privileged=true ^
