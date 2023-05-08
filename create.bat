@@ -7,6 +7,7 @@ docker run -d ^
 --hostname ranger ^
 --net my-network --ip 172.20.1.72 ^
 --link mysql8:mysql8 ^
+--link openldap:openldap ^
 -v %cd%\java:/usr/share/java ^
 -v %cd%\sh\start.sh:/root/start.sh ^
 -v %cd%\ranger-2.0.0-admin:/opt/ranger-2.0.0-admin ^
