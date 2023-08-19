@@ -28,6 +28,7 @@ fi
 
 rm -rf /opt/ranger-2.0.0-admin/set_globals.log.*
 rm -rf /opt/ranger-2.0.0-admin/ews/webapp/logs.*
+rm -rf /opt/ranger-2.0.0-admin/ews/webapp/WEB-INF/classes/conf.20*
 
 RANGER_ADMIN_CONF=/opt/ranger-2.0.0-admin
 /opt/ranger-2.0.0-admin/setup.sh
